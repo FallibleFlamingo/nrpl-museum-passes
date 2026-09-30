@@ -175,11 +175,11 @@ async function scrapeMuseum(browser, museum) {
         `- State counts: ${JSON.stringify(counts)}`,
         NEXT_MONTHS > 0 ? `- Next-month click attempted: ${navClicked === true ? 'a button was found and clicked' : 'NO MATCHING BUTTON FOUND (still showing original month)'}` : '- Next-month click not requested',
         '',
-        '**Sample "available" cell:**', '```html', sampleFor('available') ? sampleFor('available').outerHTML : '(none found)', '```',
-        '**Sample "unavailable" cell:**', '```html', sampleFor('unavailable') ? sampleFor('unavailable').outerHTML : '(none found)', '```',
-        '**Sample "unknown" cell (if any):**', '```html', sampleFor('unknown') ? sampleFor('unknown').outerHTML : '(none found)', '```',
+        '**Sample "available" cell:**', '~~~html', sampleFor('available') ? sampleFor('available').outerHTML : '(none found)', '~~~',
+        '**Sample "unavailable" cell:**', '~~~html', sampleFor('unavailable') ? sampleFor('unavailable').outerHTML : '(none found)', '~~~',
+        '**Sample "unknown" cell (if any):**', '~~~html', sampleFor('unknown') ? sampleFor('unknown').outerHTML : '(none found)', '~~~',
         '**Calendar header/nav area HTML (this is what we need to find the next-month button):**',
-        '```html', navHtmlBefore || '(could not locate month heading)', '```',
+        '~~~html', navHtmlBefore || '(could not locate month heading)', '~~~',
         '',
       ].join('\n');
       fs.appendFileSync(SUMMARY_PATH, summaryChunk);
@@ -193,3 +193,51 @@ async function scrapeMuseum(browser, museum) {
         bookingUrl: cell.state === 'available' ? url : null,
       };
     }
+
+    if (rawDays.length === 0) {
+      result.error = 'No calendar day cells were found - markup may have changed. Run with DEBUG=1 to inspect.';
+      log(`  [error] ${museum.name}: ${result.error}`);
+    } else {
+      const availCount = Object.values(result.days).filter(d => d.available).length;
+      log(`  ${museum.name}: ${availCount} available day(s)`);
+    }
+  } catch (err) {
+    result.error = err.message;
+    log(`  [error] ${museum.name}: ${err.message}`);
+  } finally {
+    await page.close();
+  }
+
+  return result;
+}
+
+async function main() {
+  if (DEBUG) {
+    fs.mkdirSync(DEBUG_DIR, { recursive: true });
+    fs.writeFileSync(SUMMARY_PATH, `# Debug summary\nGenerated ${new Date().toISOString()}\nNEXT_MONTHS=${NEXT_MONTHS}\n\n`);
+  }
+
+  log(`Starting scrape of ${museums.length} museums (headless=${HEADLESS}, debug=${DEBUG}${LIMIT ? `, limit=${LIMIT}` : ''}${NEXT_MONTHS ? `, next_months=${NEXT_MONTHS}` : ''})`);
+  const browser = await chromium.launch({ headless: HEADLESS });
+
+  const results = [];
+  for (const museum of museums) {
+    log(`Scraping ${museum.name}...`);
+    results.push(await scrapeMuseum(browser, museum));
+  }
+
+  await browser.close();
+
+  const output = { generatedAt: new Date().toISOString(), museums: results };
+  fs.mkdirSync(path.dirname(OUTPUT_PATH), { recursive: true });
+  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(output, null, 2));
+  log(`Wrote results to ${OUTPUT_PATH}`);
+
+  const failed = results.filter(r => r.error);
+  if (failed.length) {
+    log(`\n${failed.length} museum(s) had issues:`);
+    failed.forEach(f => log(`  - ${f.name}: ${f.error}`));
+  }
+}
+
+main().catch(err => { console.error(err); process.exit(1); });
