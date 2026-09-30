@@ -40,16 +40,8 @@ function log(...args) {
 }
 
 const NEXT_BUTTON_CANDIDATES = [
-  'a[title*="Next" i]',
-  'button[title*="Next" i]',
-  'a[aria-label*="Next" i]',
-  'button[aria-label*="Next" i]',
-  '.s-lc-cal-next',
-  '.cal-next',
-  'a.next',
-  'button.next',
-  '[class*="next-month" i]',
-  '[data-action*="next" i]',
+  '#s-lc-date-next',
+  '.fc-next-button',
 ];
 
 async function goToNextMonth(page, times) {
