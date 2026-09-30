@@ -1,0 +1,42 @@
+name: Debug scrape (manual)
+
+# This workflow does NOT touch your live data. It's purely for checking
+# whether the scraper correctly reads the calendar, before you trust the
+# real scheduled workflow. Run it from the Actions tab.
+
+on:
+  workflow_dispatch:
+    inputs:
+      museum_limit:
+        description: 'Only test the first N museums (faster). Leave as 3 for a quick check, or set to 19 to check all.'
+        required: false
+        default: '3'
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Run scraper in debug mode
+        env:
+          DEBUG: '1'
+          MUSEUM_LIMIT: ${{ github.event.inputs.museum_limit }}
+        run: npm run scrape
+
+      - name: Upload debug report
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-report
+          path: scraper/debug/
+          retention-days: 7
