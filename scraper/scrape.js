@@ -180,9 +180,12 @@ async function scrapeMuseum(browser, museum) {
 
     for (const cell of rawDays) {
       if (cell.state === 'other-month') continue; // not part of this museum's actual month
+      const isAvailable = cell.state === 'available';
       result.days[cell.date] = {
-        available: cell.state === 'available',
-        bookingUrl: cell.state === 'available' ? url : null,
+        available: isAvailable,
+        bookingUrl: isAvailable
+          ? (cell.href ? new URL(cell.href, 'https://nrpl.libcal.com').toString() : url)
+          : null,
       };
     }
 
