@@ -1,37 +1,21 @@
 /**
  * NRPL Museum Pass Availability Scraper
  * ---------------------------------------
- * Visits every museum's LibCal "passes" page, waits for the JS-rendered
- * calendar to load, and records which days are available vs. not.
- *
- * HOW WE DETECT AVAILABILITY (confirmed from a real debug run)
- * Each day is rendered as:
- *   <div class="day day-Tue day-2026-09-01 day-past">
- *     <div class="day-number">
- *       <span class="s-lc-pass-availability s-lc-pass-unavailable">1</span>
- *     </div>
- *   </div>
- * The exact date is embedded right in the outer div's class name
- * (day-YYYY-MM-DD) - so we read dates from there directly instead of
- * parsing a month heading. The inner span's second class tells us the
- * state: s-lc-pass-available / s-lc-pass-unavailable / s-lc-pass-closed
- * (closed = e.g. a past date, or a day the library itself is closed).
- * Only "available" counts as bookable.
- *
- * DEBUG MODE (DEBUG=1)
- * Saves, per museum, into scraper/debug/:
- *   - <id>.png    a full-page screenshot
- *   - <id>.json   every calendar cell found, with its raw HTML
- * And writes ONE combined file, scraper/debug/SUMMARY.md, with a compact
- * per-museum readout plus a sample of each state's HTML found. Small
- * enough to paste back into a chat with Claude for troubleshooting.
+ * See README for background. This revision:
+ *  - Treats "other-month-number" filler cells as a harmless 'other-month'
+ *    state (leading/trailing days from adjacent months in the 5-week grid)
+ *    instead of lumping them into 'unknown'.
+ *  - Captures the actual calendar header/navigation HTML into SUMMARY.md
+ *    so we can see the real "next month" control instead of guessing
+ *    selectors blindly.
+ *  - Still attempts to click a "next month" control if NEXT_MONTHS > 0,
+ *    but now clearly reports in SUMMARY.md whether that succeeded.
  *
  * ENV VARS
  *   HEADLESS=0        show the browser window (local use only, not CI)
- *   DEBUG=1           save screenshots + HTML dumps described above
+ *   DEBUG=1           save screenshots + HTML dumps
  *   MUSEUM_LIMIT=3    only scrape the first N museums (faster iteration)
  *   NEXT_MONTHS=1     click "next month" this many times before reading
- *                     the calendar (e.g. 1 = next month instead of current)
  */
 
 const { chromium } = require('playwright');
@@ -55,9 +39,6 @@ function log(...args) {
   console.log(new Date().toISOString(), ...args);
 }
 
-// Candidate selectors for a "go to next month" control. We try each in
-// turn since we haven't been able to directly inspect this part of the
-// markup yet - if none match, we log a warning rather than failing.
 const NEXT_BUTTON_CANDIDATES = [
   'a[title*="Next" i]',
   'button[title*="Next" i]',
@@ -67,6 +48,8 @@ const NEXT_BUTTON_CANDIDATES = [
   '.cal-next',
   'a.next',
   'button.next',
+  '[class*="next-month" i]',
+  '[data-action*="next" i]',
 ];
 
 async function goToNextMonth(page, times) {
@@ -80,12 +63,29 @@ async function goToNextMonth(page, times) {
         break;
       }
     }
-    if (!clicked) {
-      log('  [warn] Could not find a "next month" button - NEXT_MONTHS may not have worked. Check SUMMARY.md monthLabel / dates found.');
-      return;
-    }
+    if (!clicked) return false;
     await page.waitForTimeout(1200);
   }
+  return true;
+}
+
+// Finds the element showing the month/year heading (e.g. "September 2026")
+// and returns a snippet of its surrounding container's HTML, so we can see
+// whatever nav buttons sit next to it.
+async function captureNavHtml(page) {
+  return page.evaluate(() => {
+    const all = Array.from(document.querySelectorAll('*'));
+    const heading = all.find(el =>
+      el.children.length === 0 &&
+      /^[A-Z][a-z]+ \d{4}$/.test((el.textContent || '').trim())
+    );
+    if (!heading) return null;
+    let container = heading.parentElement;
+    for (let i = 0; i < 2 && container && container.parentElement; i++) {
+      container = container.parentElement;
+    }
+    return container ? container.outerHTML.slice(0, 1800) : null;
+  });
 }
 
 async function scrapeMuseum(browser, museum) {
@@ -95,7 +95,7 @@ async function scrapeMuseum(browser, museum) {
     name: museum.name,
     id: museum.id,
     url,
-    days: {}, // "YYYY-MM-DD" -> { available: bool, bookingUrl: string }
+    days: {},
     error: null,
   };
 
@@ -120,8 +120,11 @@ async function scrapeMuseum(browser, museum) {
     });
     await page.waitForTimeout(1500);
 
+    const navHtmlBefore = DEBUG ? await captureNavHtml(page).catch(() => null) : null;
+
+    let navClicked = null;
     if (NEXT_MONTHS > 0) {
-      await goToNextMonth(page, NEXT_MONTHS);
+      navClicked = await goToNextMonth(page, NEXT_MONTHS);
       await page.waitForFunction(() => {
         const text = document.body.innerText || '';
         return !text.includes('Determining Availability');
@@ -136,22 +139,21 @@ async function scrapeMuseum(browser, museum) {
       return dayEls.map(el => {
         const dateMatch = el.className.match(/day-(\d{4}-\d{2}-\d{2})/);
         const date = dateMatch ? dateMatch[1] : null;
+        const isOtherMonth = /\bday-other-month\b/.test(el.className);
 
         const availEl = el.querySelector('[class*="s-lc-pass-"]');
         let state = 'unknown';
-        let stateClass = availEl ? availEl.className : null;
-        if (availEl) {
+        if (isOtherMonth) {
+          state = 'other-month';
+        } else if (availEl) {
           if (availEl.classList.contains('s-lc-pass-available')) state = 'available';
           else if (availEl.classList.contains('s-lc-pass-unavailable')) state = 'unavailable';
           else if (availEl.classList.contains('s-lc-pass-closed')) state = 'closed';
         }
 
         const link = el.querySelector('a');
-
         return {
-          date,
-          state,
-          stateClass,
+          date, state,
           isPast: /\bday-past\b/.test(el.className),
           hasLink: !!link,
           href: link ? link.getAttribute('href') : null,
@@ -162,37 +164,22 @@ async function scrapeMuseum(browser, museum) {
 
     if (DEBUG) {
       fs.mkdirSync(DEBUG_DIR, { recursive: true });
-      fs.writeFileSync(
-        path.join(DEBUG_DIR, `${museum.id}.json`),
-        JSON.stringify(rawDays, null, 2)
-      );
-      await page.screenshot({
-        path: path.join(DEBUG_DIR, `${museum.id}.png`),
-        fullPage: true,
-      });
+      fs.writeFileSync(path.join(DEBUG_DIR, `${museum.id}.json`), JSON.stringify(rawDays, null, 2));
+      await page.screenshot({ path: path.join(DEBUG_DIR, `${museum.id}.png`), fullPage: true });
 
-      const counts = rawDays.reduce((acc, d) => {
-        acc[d.state] = (acc[d.state] || 0) + 1;
-        return acc;
-      }, {});
+      const counts = rawDays.reduce((acc, d) => { acc[d.state] = (acc[d.state] || 0) + 1; return acc; }, {});
       const sampleFor = (state) => rawDays.find(d => d.state === state);
       const summaryChunk = [
         `## ${museum.name} (${museum.id})`,
         `- Days found: ${rawDays.length}${rawDays.length ? ` (${rawDays[0].date} to ${rawDays[rawDays.length - 1].date})` : ''}`,
         `- State counts: ${JSON.stringify(counts)}`,
+        NEXT_MONTHS > 0 ? `- Next-month click attempted: ${navClicked === true ? 'a button was found and clicked' : 'NO MATCHING BUTTON FOUND (still showing original month)'}` : '- Next-month click not requested',
         '',
-        '**Sample "available" cell:**',
-        '```html',
-        sampleFor('available') ? sampleFor('available').outerHTML : '(none found)',
-        '```',
-        '**Sample "unavailable" cell:**',
-        '```html',
-        sampleFor('unavailable') ? sampleFor('unavailable').outerHTML : '(none found)',
-        '```',
-        '**Sample "unknown" cell (if any - means our class detection missed something):**',
-        '```html',
-        sampleFor('unknown') ? sampleFor('unknown').outerHTML : '(none found)',
-        '```',
+        '**Sample "available" cell:**', '```html', sampleFor('available') ? sampleFor('available').outerHTML : '(none found)', '```',
+        '**Sample "unavailable" cell:**', '```html', sampleFor('unavailable') ? sampleFor('unavailable').outerHTML : '(none found)', '```',
+        '**Sample "unknown" cell (if any):**', '```html', sampleFor('unknown') ? sampleFor('unknown').outerHTML : '(none found)', '```',
+        '**Calendar header/nav area HTML (this is what we need to find the next-month button):**',
+        '```html', navHtmlBefore || '(could not locate month heading)', '```',
         '',
       ].join('\n');
       fs.appendFileSync(SUMMARY_PATH, summaryChunk);
@@ -200,64 +187,9 @@ async function scrapeMuseum(browser, museum) {
     }
 
     for (const cell of rawDays) {
+      if (cell.state === 'other-month') continue; // not part of this museum's actual month
       result.days[cell.date] = {
         available: cell.state === 'available',
         bookingUrl: cell.state === 'available' ? url : null,
       };
     }
-
-    if (rawDays.length === 0) {
-      result.error = 'No calendar day cells were found - markup may have changed. Run with DEBUG=1 to inspect.';
-      log(`  [error] ${museum.name}: ${result.error}`);
-    } else {
-      const availCount = rawDays.filter(d => d.state === 'available').length;
-      log(`  ${museum.name}: ${availCount} available day(s) out of ${rawDays.length} found`);
-    }
-  } catch (err) {
-    result.error = err.message;
-    log(`  [error] ${museum.name}: ${err.message}`);
-  } finally {
-    await page.close();
-  }
-
-  return result;
-}
-
-async function main() {
-  if (DEBUG) {
-    fs.mkdirSync(DEBUG_DIR, { recursive: true });
-    fs.writeFileSync(SUMMARY_PATH, `# Debug summary\nGenerated ${new Date().toISOString()}\nNEXT_MONTHS=${NEXT_MONTHS}\n\n`);
-  }
-
-  log(`Starting scrape of ${museums.length} museums (headless=${HEADLESS}, debug=${DEBUG}${LIMIT ? `, limit=${LIMIT}` : ''}${NEXT_MONTHS ? `, next_months=${NEXT_MONTHS}` : ''})`);
-  const browser = await chromium.launch({ headless: HEADLESS });
-
-  const results = [];
-  for (const museum of museums) {
-    log(`Scraping ${museum.name}...`);
-    const result = await scrapeMuseum(browser, museum);
-    results.push(result);
-  }
-
-  await browser.close();
-
-  const output = {
-    generatedAt: new Date().toISOString(),
-    museums: results,
-  };
-
-  fs.mkdirSync(path.dirname(OUTPUT_PATH), { recursive: true });
-  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(output, null, 2));
-  log(`Wrote results to ${OUTPUT_PATH}`);
-
-  const failed = results.filter(r => r.error);
-  if (failed.length) {
-    log(`\n${failed.length} museum(s) had issues:`);
-    failed.forEach(f => log(`  - ${f.name}: ${f.error}`));
-  }
-}
-
-main().catch(err => {
-  console.error(err);
-  process.exit(1);
-});
