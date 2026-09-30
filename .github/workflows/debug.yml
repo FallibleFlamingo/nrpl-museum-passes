@@ -1,12 +1,20 @@
 name: Debug scrape (manual)
 
+# This workflow does NOT touch your live data. It's purely for checking
+# whether the scraper correctly reads the calendar, before you trust the
+# real scheduled workflow. Run it from the Actions tab.
+
 on:
   workflow_dispatch:
     inputs:
       museum_limit:
-        description: 'Only test the first N museums (faster). Leave as 3 for a quick check, or set to 19 to check all.'
+        description: 'Only test the first N museums (faster). Set to 19 to check all.'
         required: false
         default: '3'
+      next_months:
+        description: 'Advance this many months forward before reading the calendar (0 = current month, 1 = next month)'
+        required: false
+        default: '0'
 
 jobs:
   debug:
@@ -28,6 +36,7 @@ jobs:
         env:
           DEBUG: '1'
           MUSEUM_LIMIT: ${{ github.event.inputs.museum_limit }}
+          NEXT_MONTHS: ${{ github.event.inputs.next_months }}
         run: npm run scrape
 
       - name: Upload debug report
