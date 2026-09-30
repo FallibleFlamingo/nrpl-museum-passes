@@ -1,0 +1,12 @@
+{
+  "name": "nrpl-museum-passes",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Scrapes NRPL LibCal museum pass availability and publishes a summary dashboard.",
+  "scripts": {
+    "scrape": "node scraper/scrape.js"
+  },
+  "dependencies": {
+    "playwright": "^1.47.0"
+  }
+}

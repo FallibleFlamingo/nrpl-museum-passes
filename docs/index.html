@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NRPL Museum Pass Availability</title>
+<style>
+  :root {
+    --green: #2e7d32; --green-bg: #eaf6ea;
+    --ink: #1c1c1c; --muted: #6b6b6b; --border: #e2e2e2;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 900px; margin: 0 auto; padding: 24px 16px 64px; color: var(--ink);
+  }
+  h1 { font-size: 1.5rem; margin-bottom: 4px; }
+  .subtitle { color: var(--muted); font-size: 0.9rem; margin-bottom: 24px; }
+  .updated { color: var(--muted); font-size: 0.8rem; margin-bottom: 24px; }
+  .search {
+    width: 100%; padding: 10px 12px; font-size: 1rem;
+    border: 1px solid var(--border); border-radius: 8px; margin-bottom: 20px;
+  }
+  .day-card { border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; }
+  .day-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px; }
+  .day-name { font-weight: 600; font-size: 1.05rem; }
+  .day-count { font-size: 0.8rem; color: var(--muted); }
+  .museum-list { display: flex; flex-wrap: wrap; gap: 8px; }
+  .museum-pill {
+    display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px;
+    border-radius: 999px; font-size: 0.85rem; text-decoration: none;
+    background: var(--green-bg); color: var(--green); border: 1px solid rgba(46,125,50,0.25);
+  }
+  .museum-pill:hover { filter: brightness(0.95); }
+  .error-banner {
+    background: #fff4e5; border: 1px solid #f0c987; border-radius: 8px;
+    padding: 10px 14px; font-size: 0.85rem; color: #7a5200; margin-bottom: 20px;
+  }
+  footer { margin-top: 40px; font-size: 0.75rem; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+  <h1>NRPL Museum Pass Availability</h1>
+  <div class="subtitle">New Rochelle Public Library &mdash; free museum passes, summarized by day</div>
+  <div class="updated" id="updated"></div>
+
+  <input class="search" id="search" placeholder="Filter by museum name (e.g. Frick, MoMA)..." />
+
+  <div id="errorBanner"></div>
+  <div id="days"></div>
+
+  <footer>
+    Data pulled from <a href="https://nrpl.libcal.com/passes" target="_blank" rel="noopener">nrpl.libcal.com/passes</a>.
+    Always double-check on the library site before making plans.
+  </footer>
+
+<script>
+async function load() {
+  const res = await fetch('data/availability.json', { cache: 'no-store' });
+  const data = await res.json();
+  render(data);
+}
+
+function render(data) {
+  document.getElementById('updated').textContent =
+    'Last updated: ' + (data.generatedAt ? new Date(data.generatedAt).toLocaleString() : 'never yet');
+
+  const failed = data.museums.filter(m => m.error);
+  if (failed.length) {
+    document.getElementById('errorBanner').innerHTML =
+      '<div class="error-banner">' +
+      failed.length + ' museum page(s) could not be read on the last run: ' +
+      failed.map(f => f.name).join(', ') +
+      '. They are left out of the summary below.</div>';
+  }
+
+  const byDate = {};
+  for (const museum of data.museums) {
+    if (museum.error) continue;
+    for (const [date, info] of Object.entries(museum.days || {})) {
+      if (!info.available) continue;
+      byDate[date] = byDate[date] || [];
+      byDate[date].push({ name: museum.name, url: info.bookingUrl || museum.url });
+    }
+  }
+
+  const container = document.getElementById('days');
+  container.innerHTML = '';
+
+  const today = new Date(); today.setHours(0,0,0,0);
+  const dates = Object.keys(byDate).sort();
+
+  if (!dates.length) {
+    container.innerHTML = '<p>No availability data yet. Run the scraper (Actions tab) to populate this page.</p>';
+    return;
+  }
+
+  for (const date of dates) {
+    const d = new Date(date + 'T00:00:00');
+    if (d < today) continue;
+    const museumsForDay = byDate[date].sort((a,b) => a.name.localeCompare(b.name));
+
+    const card = document.createElement('div');
+    card.className = 'day-card';
+    card.dataset.museums = museumsForDay.map(m => m.name.toLowerCase()).join('|');
+
+    const dayName = d.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' });
+    card.innerHTML = `
+      <div class="day-header">
+        <div class="day-name">${dayName}</div>
+        <div class="day-count">${museumsForDay.length} museum${museumsForDay.length === 1 ? '' : 's'}</div>
+      </div>
+      <div class="museum-list">
+        ${museumsForDay.map(m => `<a class="museum-pill" target="_blank" rel="noopener" href="${m.url}">${m.name}</a>`).join('')}
+      </div>
+    `;
+    container.appendChild(card);
+  }
+
+  document.getElementById('search').addEventListener('input', (e) => {
+    const q = e.target.value.trim().toLowerCase();
+    document.querySelectorAll('.day-card').forEach(card => {
+      card.style.display = (!q || card.dataset.museums.includes(q)) ? '' : 'none';
+    });
+  });
+}
+
+load().catch(err => {
+  document.getElementById('days').innerHTML = '<p>Could not load availability data: ' + err.message + '</p>';
+});
+</script>
+</body>
+</html>
