@@ -189,7 +189,7 @@
                                     </template>
                                 </div>
                             </div>
-                            <p class="text-xs text-slate-500 mb-4" x-text="museum.location || 'New York / Regional'"></p>
+                            <p class="text-xs text-slate-500 mb-4" x-text="museum.location || 'New York City'"></p>
                             
                             <!-- Available Dates preview list -->
                             <div class="mb-4">
@@ -234,11 +234,9 @@
                 selectedLocations: [],
                 selectedMuseumNames: [],
                 
-                // Explicit defaults for Themes and Locations
                 availableThemes: ['Art', 'Children\'s', 'History', 'Nature', 'Outdoors', 'Science'],
                 availableLocations: ['Central Westchester County', 'Northern Westchester County', 'New York City', 'Connecticut'],
                 
-                // Calendar navigation state
                 calendarYear: new Date().getFullYear(),
                 calendarMonth: new Date().getMonth(),
                 monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
@@ -253,20 +251,6 @@
                         const data = await response.json();
                         
                         this.museums = data.museums || [];
-                        
-                        // Dynamically merge scraped themes if present
-                        const extractedThemes = this.museums.flatMap(m => m.themes || [m.theme]).filter(t => t && t !== 'General');
-                        if (extractedThemes.length > 0) {
-                            const mergedSet = new Set([...this.availableThemes, ...extractedThemes]);
-                            this.availableThemes = Array.from(mergedSet).sort();
-                        }
-
-                        // Dynamically merge scraped locations if present
-                        const extractedLocs = this.museums.map(m => m.location).filter(l => l && l !== 'New York');
-                        if (extractedLocs.length > 0) {
-                            const mergedLocs = new Set([...this.availableLocations, ...extractedLocs]);
-                            this.availableLocations = Array.from(mergedLocs).sort();
-                        }
 
                     } catch (err) {
                         console.error('Failed to load availability.json:', err);
@@ -279,12 +263,17 @@
                     return this.museums.filter(m => {
                         const matchesSearch = this.searchQuery === '' || m.name.toLowerCase().includes(this.searchQuery.toLowerCase());
                         
-                        // Multi-theme matching: matches if any of the museum's themes are selected
-                        const mThemes = m.themes || [m.theme || 'General'];
-                        const matchesTheme = this.selectedThemes.length === 0 || mThemes.some(t => this.selectedThemes.includes(t));
+                        // Multi-theme matching logic
+                        const mThemes = m.themes || (m.theme ? [m.theme] : []);
+                        const matchesTheme = this.selectedThemes.length === 0 || 
+                            mThemes.some(t => this.selectedThemes.includes(t));
                         
-                        const matchesLoc = this.selectedLocations.length === 0 || this.selectedLocations.includes(m.location || 'New York City');
-                        const matchesName = this.selectedMuseumNames.length === 0 || this.selectedMuseumNames.includes(m.name);
+                        // Location matching logic
+                        const matchesLoc = this.selectedLocations.length === 0 || 
+                            (m.location && this.selectedLocations.includes(m.location));
+                            
+                        const matchesName = this.selectedMuseumNames.length === 0 || 
+                            this.selectedMuseumNames.includes(m.name);
                         
                         return matchesSearch && matchesTheme && matchesLoc && matchesName;
                     });
