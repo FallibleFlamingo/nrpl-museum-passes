@@ -1,0 +1,38 @@
+name: Scrape museum pass availability
+
+on:
+  schedule:
+    # Runs every 3 hours. Edit this cron expression to change frequency.
+    # (Cron times are UTC. 0 */3 * * * = every 3 hours on the hour.)
+    - cron: '0 */3 * * *'
+  workflow_dispatch: {} # lets you trigger it manually from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Run scraper
+        run: npm run scrape
+
+      - name: Commit updated availability data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/data/availability.json
+          git diff --quiet --cached || git commit -m "Update availability data [automated]"
+          git push
