@@ -19,13 +19,7 @@
                 <p class="text-indigo-200 text-xs md:text-sm">Find and reserve available library museum passes easily.</p>
             </div>
             
-            <div class="flex items-center gap-2 md:gap-3 w-full md:w-auto justify-center">
-                <!-- Toggle Filter Sidebar Button -->
-                <button @click="showSidebar = !showSidebar" 
-                        class="px-3 py-2 bg-indigo-500 hover:bg-indigo-400 text-white rounded-lg text-xs md:text-sm font-medium transition flex items-center gap-1.5 shadow-sm">
-                    <span x-text="showSidebar ? '◀ Hide Filters' : '⚙ Filters'"></span>
-                </button>
-
+            <div class="flex items-center gap-2 md:gap-3">
                 <!-- View Switcher Tabs -->
                 <div class="bg-indigo-700 p-1 rounded-lg flex space-x-1">
                     <button @click="currentView = 'calendar'" 
@@ -57,80 +51,92 @@
     <!-- Main Container -->
     <main class="max-w-7xl mx-auto px-4 py-6 md:py-8 flex-grow w-full flex flex-col lg:flex-row gap-6 md:gap-8">
         
-        <!-- Sidebar Filters (Collapsible Drawer & Mobile Modal) -->
-        <aside x-show="showSidebar" 
-               x-transition:enter="transition ease-out duration-200"
-               x-transition:enter-start="opacity-0 -translate-x-6"
-               x-transition:enter-end="opacity-100 translate-x-0"
-               class="bg-white p-5 md:p-6 rounded-xl shadow-sm border border-slate-200 w-full lg:w-80 shrink-0 space-y-5 h-fit">
+        <!-- Sidebar Filters (Collapsible Drawer on Desktop / Floating Overlay Drawer on Mobile) -->
+        <div x-show="showSidebar" 
+             @click.self="if (window.innerWidth < 1024) showSidebar = false"
+             class="fixed lg:relative inset-0 z-50 lg:z-auto bg-slate-900/50 lg:bg-transparent backdrop-blur-sm lg:backdrop-blur-none flex justify-start">
             
-            <!-- Sidebar Heading -->
-            <div class="flex justify-between items-center border-b pb-3 border-slate-100">
-                <div class="flex items-center gap-2">
-                    <h2 class="font-bold text-lg text-slate-900">Filters</h2>
-                    <button @click="showSidebar = false" 
-                            title="Collapse filters"
-                            class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-600 px-2 py-0.5 rounded font-medium transition">
-                        Hide ◀
+            <aside x-show="showSidebar" 
+                   x-transition:enter="transition ease-out duration-200"
+                   x-transition:enter-start="opacity-0 -translate-x-full lg:-translate-x-6"
+                   x-transition:enter-end="opacity-100 translate-x-0"
+                   class="bg-white p-5 md:p-6 rounded-r-xl lg:rounded-xl shadow-xl lg:shadow-sm border border-slate-200 w-4/5 sm:w-80 lg:w-80 shrink-0 space-y-5 h-full lg:h-fit overflow-y-auto max-h-screen lg:max-h-none">
+                
+                <!-- Sidebar Heading -->
+                <div class="flex justify-between items-center border-b pb-3 border-slate-100">
+                    <div class="flex items-center gap-2">
+                        <h2 class="font-bold text-lg text-slate-900">Filters</h2>
+                        <button @click="showSidebar = false" 
+                                title="Collapse filters"
+                                class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-600 px-2 py-0.5 rounded font-medium transition">
+                            Close ◀
+                        </button>
+                    </div>
+                    <button @click="resetFilters()" class="text-xs text-indigo-600 hover:underline font-medium">Reset All</button>
+                </div>
+
+                <!-- Search Filter -->
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Search Museum</label>
+                    <input type="text" x-model="searchQuery" placeholder="Filter by name..." class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+
+                <!-- Section 1: Themes Accordion -->
+                <div class="border-t pt-3 border-slate-100" x-data="{ open: true }">
+                    <button @click="open = !open" class="w-full flex justify-between items-center text-xs font-semibold uppercase tracking-wider text-slate-500 hover:text-slate-800 py-1">
+                        <span>Themes</span>
+                        <span x-text="open ? '−' : '+'" class="text-base font-bold"></span>
+                    </button>
+                    <div x-show="open" class="mt-2 space-y-2 max-h-48 overflow-y-auto pr-1">
+                        <template x-for="theme in availableThemes" :key="theme">
+                            <label class="flex items-center text-sm text-slate-700 cursor-pointer hover:text-indigo-600 transition">
+                                <input type="checkbox" :value="theme" x-model="selectedThemes" class="rounded text-indigo-600 focus:ring-indigo-500 mr-2">
+                                <span x-text="theme"></span>
+                            </label>
+                        </template>
+                    </div>
+                </div>
+
+                <!-- Section 2: Location / Region Accordion -->
+                <div class="border-t pt-3 border-slate-100" x-data="{ open: true }">
+                    <button @click="open = !open" class="w-full flex justify-between items-center text-xs font-semibold uppercase tracking-wider text-slate-500 hover:text-slate-800 py-1">
+                        <span>Location / Region</span>
+                        <span x-text="open ? '−' : '+'" class="text-base font-bold"></span>
+                    </button>
+                    <div x-show="open" class="mt-2 space-y-2">
+                        <template x-for="loc in availableLocations" :key="loc">
+                            <label class="flex items-center text-sm text-slate-700 cursor-pointer hover:text-indigo-600 transition">
+                                <input type="checkbox" :value="loc" x-model="selectedLocations" class="rounded text-indigo-600 focus:ring-indigo-500 mr-2">
+                                <span x-text="loc"></span>
+                            </label>
+                        </template>
+                    </div>
+                </div>
+
+                <!-- Section 3: Individual Museums Accordion -->
+                <div class="border-t pt-3 border-slate-100" x-data="{ open: false }">
+                    <button @click="open = !open" class="w-full flex justify-between items-center text-xs font-semibold uppercase tracking-wider text-slate-500 hover:text-slate-800 py-1">
+                        <span>Specific Museums</span>
+                        <span x-text="open ? '−' : '+'" class="text-base font-bold"></span>
+                    </button>
+                    <div x-show="open" class="mt-2 space-y-2 max-h-52 overflow-y-auto pr-1">
+                        <template x-for="museum in museums" :key="museum.id">
+                            <label class="flex items-center text-sm text-slate-700 cursor-pointer hover:text-indigo-600 transition">
+                                <input type="checkbox" :value="museum.name" x-model="selectedMuseumNames" class="rounded text-indigo-600 focus:ring-indigo-500 mr-2">
+                                <span x-text="museum.name" class="truncate"></span>
+                            </label>
+                        </template>
+                    </div>
+                </div>
+
+                <!-- Mobile Done Button -->
+                <div class="block lg:hidden pt-4 border-t border-slate-100">
+                    <button @click="showSidebar = false" class="w-full py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-lg shadow-sm">
+                        Apply Filters
                     </button>
                 </div>
-                <button @click="resetFilters()" class="text-xs text-indigo-600 hover:underline font-medium">Reset All</button>
-            </div>
-
-            <!-- Search Filter -->
-            <div>
-                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Search Museum</label>
-                <input type="text" x-model="searchQuery" placeholder="Filter by name..." class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
-            </div>
-
-            <!-- Section 1: Themes Accordion -->
-            <div class="border-t pt-3 border-slate-100" x-data="{ open: true }">
-                <button @click="open = !open" class="w-full flex justify-between items-center text-xs font-semibold uppercase tracking-wider text-slate-500 hover:text-slate-800 py-1">
-                    <span>Themes</span>
-                    <span x-text="open ? '−' : '+'" class="text-base font-bold"></span>
-                </button>
-                <div x-show="open" class="mt-2 space-y-2 max-h-48 overflow-y-auto pr-1">
-                    <template x-for="theme in availableThemes" :key="theme">
-                        <label class="flex items-center text-sm text-slate-700 cursor-pointer hover:text-indigo-600 transition">
-                            <input type="checkbox" :value="theme" x-model="selectedThemes" class="rounded text-indigo-600 focus:ring-indigo-500 mr-2">
-                            <span x-text="theme"></span>
-                        </label>
-                    </template>
-                </div>
-            </div>
-
-            <!-- Section 2: Location / Region Accordion -->
-            <div class="border-t pt-3 border-slate-100" x-data="{ open: true }">
-                <button @click="open = !open" class="w-full flex justify-between items-center text-xs font-semibold uppercase tracking-wider text-slate-500 hover:text-slate-800 py-1">
-                    <span>Location / Region</span>
-                    <span x-text="open ? '−' : '+'" class="text-base font-bold"></span>
-                </button>
-                <div x-show="open" class="mt-2 space-y-2">
-                    <template x-for="loc in availableLocations" :key="loc">
-                        <label class="flex items-center text-sm text-slate-700 cursor-pointer hover:text-indigo-600 transition">
-                            <input type="checkbox" :value="loc" x-model="selectedLocations" class="rounded text-indigo-600 focus:ring-indigo-500 mr-2">
-                            <span x-text="loc"></span>
-                        </label>
-                    </template>
-                </div>
-            </div>
-
-            <!-- Section 3: Individual Museums Accordion -->
-            <div class="border-t pt-3 border-slate-100" x-data="{ open: false }">
-                <button @click="open = !open" class="w-full flex justify-between items-center text-xs font-semibold uppercase tracking-wider text-slate-500 hover:text-slate-800 py-1">
-                    <span>Specific Museums</span>
-                    <span x-text="open ? '−' : '+'" class="text-base font-bold"></span>
-                </button>
-                <div x-show="open" class="mt-2 space-y-2 max-h-52 overflow-y-auto pr-1">
-                    <template x-for="museum in museums" :key="museum.id">
-                        <label class="flex items-center text-sm text-slate-700 cursor-pointer hover:text-indigo-600 transition">
-                            <input type="checkbox" :value="museum.name" x-model="selectedMuseumNames" class="rounded text-indigo-600 focus:ring-indigo-500 mr-2">
-                            <span x-text="museum.name" class="truncate"></span>
-                        </label>
-                    </template>
-                </div>
-            </div>
-        </aside>
+            </aside>
+        </div>
 
         <!-- Content Area -->
         <section class="flex-grow space-y-6 w-full">
@@ -153,14 +159,12 @@
                     </div>
                 </div>
 
-                <!-- DESKTOP 7-COLUMN GRID VIEW (Shown on md: and larger) -->
+                <!-- DESKTOP 7-COLUMN GRID VIEW -->
                 <div class="hidden md:block">
-                    <!-- Days of Week Header -->
                     <div class="grid grid-cols-7 gap-2 text-center font-semibold text-xs text-slate-400 uppercase mb-2">
                         <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
                     </div>
 
-                    <!-- Calendar Grid Days -->
                     <div class="grid grid-cols-7 gap-2">
                         <template x-for="day in calendarDays">
                             <div :class="{
@@ -172,14 +176,15 @@
                                 <div class="flex justify-between items-center">
                                     <span class="text-xs font-bold" :class="day.isToday ? 'bg-indigo-600 text-white px-1.5 py-0.5 rounded-full' : 'text-slate-700'" x-text="day.dateNumber"></span>
                                 </div>
-                                <!-- Available Museums as direct links -->
+                                
+                                <!-- Museum Button triggers Modal Info Window -->
                                 <div class="space-y-1 overflow-y-auto max-h-[85px] mt-1">
                                     <template x-for="pass in getPassesForDate(day.dateString)" :key="pass.museumName">
-                                        <a :href="pass.bookingUrl" target="_blank" 
-                                           class="block text-[11px] bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200 rounded px-1.5 py-0.5 truncate font-medium transition"
-                                           :title="pass.museumName">
+                                        <button @click="openMuseumModal(pass.museum, day.dateString, pass.bookingUrl)" 
+                                                class="w-full text-left text-[11px] bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200 rounded px-1.5 py-0.5 truncate font-medium transition"
+                                                :title="pass.museumName">
                                             <span x-text="pass.museumName"></span>
-                                        </a>
+                                        </button>
                                     </template>
                                 </div>
                             </div>
@@ -187,7 +192,7 @@
                     </div>
                 </div>
 
-                <!-- MOBILE AGENDA LIST VIEW (Shown on screens smaller than md) -->
+                <!-- MOBILE AGENDA LIST VIEW -->
                 <div class="block md:hidden space-y-4">
                     <template x-for="day in calendarDays.filter(d => d.isCurrentMonth && getPassesForDate(d.dateString).length > 0)" :key="day.dateString">
                         <div class="border rounded-xl p-4 bg-white shadow-sm border-slate-200">
@@ -199,11 +204,11 @@
                             
                             <div class="space-y-2">
                                 <template x-for="pass in getPassesForDate(day.dateString)" :key="pass.museumName">
-                                    <a :href="pass.bookingUrl" target="_blank" 
-                                       class="flex justify-between items-center p-2.5 bg-slate-50 hover:bg-indigo-50 border border-slate-200 hover:border-indigo-300 rounded-lg transition text-slate-800">
-                                        <span class="text-xs font-semibold text-indigo-900 pr-2" x-text="pass.museumName"></span>
-                                        <span class="text-[10px] bg-indigo-600 text-white font-medium px-2 py-1 rounded shrink-0">Reserve &rarr;</span>
-                                    </a>
+                                    <button @click="openMuseumModal(pass.museum, day.dateString, pass.bookingUrl)" 
+                                            class="w-full flex justify-between items-center p-2.5 bg-slate-50 hover:bg-indigo-50 border border-slate-200 hover:border-indigo-300 rounded-lg transition text-slate-800">
+                                        <span class="text-xs font-semibold text-indigo-900 pr-2 text-left" x-text="pass.museumName"></span>
+                                        <span class="text-[10px] bg-indigo-600 text-white font-medium px-2.5 py-1 rounded shrink-0">Info & Reserve &rarr;</span>
+                                    </button>
                                 </template>
                             </div>
                         </div>
@@ -239,7 +244,7 @@
                                 <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Available Dates:</h4>
                                 <div class="flex flex-wrap gap-1.5 max-h-28 overflow-y-auto">
                                     <template x-for="slot in getAvailableDatesList(museum)" :key="slot.date">
-                                        <a :href="slot.bookingUrl" target="_blank" class="text-xs bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200 px-2 py-0.5 rounded font-medium transition" x-text="formatDateShort(slot.date)" :title="'Book ' + museum.name"></a>
+                                        <button @click="openMuseumModal(museum, slot.date, slot.bookingUrl)" class="text-xs bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200 px-2 py-0.5 rounded font-medium transition" x-text="formatDateShort(slot.date)"></button>
                                     </template>
                                     <template x-if="getAvailableDatesList(museum).length === 0">
                                         <span class="text-xs text-slate-400 italic">No dates currently available</span>
@@ -250,7 +255,7 @@
 
                         <div class="pt-4 border-t border-slate-100 flex justify-between items-center">
                             <span class="text-xs text-slate-500" x-text="getAvailableDatesCount(museum) + ' slots open'"></span>
-                            <a :href="museum.url" target="_blank" class="text-xs font-medium text-indigo-600 hover:underline">View Museum Page &rarr;</a>
+                            <button @click="openMuseumModal(museum, null, museum.url)" class="text-xs font-medium text-indigo-600 hover:underline">View Info &rarr;</button>
                         </div>
                     </div>
                 </template>
@@ -259,12 +264,65 @@
         </section>
     </main>
 
+    <!-- Museum Info & Reservation Overlay Modal Window -->
+    <div x-show="activeModal" 
+         x-transition:enter="transition ease-out duration-200"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         @keydown.escape.window="activeModal = null"
+         class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        
+        <div @click.away="activeModal = null" 
+             class="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-6 space-y-5 border border-slate-100 max-h-[90vh] overflow-y-auto">
+            
+            <!-- Top Reservation Route Button -->
+            <div class="flex justify-between items-center gap-3 bg-indigo-50 p-4 rounded-xl border border-indigo-100">
+                <div>
+                    <span class="text-xs text-indigo-600 uppercase font-bold tracking-wider block">Selected Date</span>
+                    <span class="text-sm font-bold text-slate-800" x-text="selectedModalDate ? formatDateLong(selectedModalDate) : 'General Reservation'"></span>
+                </div>
+                <a :href="selectedModalBookingUrl" target="_blank" 
+                   class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-xs md:text-sm rounded-lg transition shadow-sm shrink-0 flex items-center gap-1">
+                    <span>Reserve Pass</span> &rarr;
+                </a>
+            </div>
+
+            <!-- Museum Title & Badges -->
+            <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2" x-text="activeModal?.name"></h3>
+                <div class="flex flex-wrap gap-1.5 mb-2">
+                    <template x-for="t in (activeModal?.themes || [activeModal?.theme])" :key="t">
+                        <span class="text-xs px-2.5 py-0.5 bg-indigo-100 text-indigo-800 font-medium rounded-full" x-text="t"></span>
+                    </template>
+                </div>
+                <p class="text-xs font-medium text-slate-500" x-text="'📍 ' + (activeModal?.location || 'New York Region')"></p>
+            </div>
+
+            <!-- Description -->
+            <div class="border-t pt-4 border-slate-100">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Pass Details & Information</h4>
+                <div class="text-sm text-slate-600 leading-relaxed space-y-2 max-h-48 overflow-y-auto pr-1" x-html="activeModal?.description || 'The pass provides admission for guests based on library guidelines. Click reserve above to proceed directly to the official LibCal reservation page.'">
+                </div>
+            </div>
+
+            <!-- Close & Route Controls -->
+            <div class="pt-3 border-t border-slate-100 flex justify-between items-center">
+                <button @click="activeModal = null" class="px-4 py-2 border rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 transition">
+                    Close
+                </button>
+                <a :href="selectedModalBookingUrl" target="_blank" class="text-xs font-semibold text-indigo-600 hover:underline">
+                    Proceed to LibCal Booking &rarr;
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500 mb-12 lg:mb-0">
         <p>NRPL Museum Pass Hub &bull; Automatically updated via GitHub Actions</p>
     </footer>
 
-    <!-- Mobile Floating Navigation / Filter Trigger -->
+    <!-- Mobile Floating Navigation Bar -->
     <div class="lg:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-40 bg-slate-900/90 backdrop-blur-md text-white px-4 py-2.5 rounded-full shadow-xl flex items-center gap-4 text-xs font-medium border border-slate-700">
         <button @click="showSidebar = !showSidebar" class="flex items-center gap-1.5 text-indigo-300 hover:text-white">
             <span>⚙</span>
@@ -283,6 +341,9 @@
                 loading: true,
                 showSidebar: true,
                 currentView: 'calendar',
+                activeModal: null,
+                selectedModalDate: null,
+                selectedModalBookingUrl: '#',
                 museums: [],
                 searchQuery: '',
                 selectedThemes: [],
@@ -297,7 +358,6 @@
                 monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
 
                 init() {
-                    // Auto-collapse sidebar on small screens initially for better mobile presentation
                     if (window.innerWidth < 1024) {
                         this.showSidebar = false;
                     }
@@ -314,6 +374,12 @@
                     } finally {
                         this.loading = false;
                     }
+                },
+
+                openMuseumModal(museum, dateStr, bookingUrl) {
+                    this.activeModal = museum;
+                    this.selectedModalDate = dateStr;
+                    this.selectedModalBookingUrl = bookingUrl || museum.url;
                 },
 
                 get filteredMuseums() {
@@ -340,6 +406,7 @@
                         if (museum.days && museum.days[dateStr] && museum.days[dateStr].available) {
                             passes.push({
                                 museumName: museum.name,
+                                museum: museum,
                                 bookingUrl: museum.days[dateStr].bookingUrl || museum.url
                             });
                         }
