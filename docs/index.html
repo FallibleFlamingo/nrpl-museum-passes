@@ -1,133 +1,348 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NRPL Museum Pass Availability</title>
-<style>
-  :root {
-    --green: #2e7d32; --green-bg: #eaf6ea;
-    --ink: #1c1c1c; --muted: #6b6b6b; --border: #e2e2e2;
-  }
-  * { box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    max-width: 900px; margin: 0 auto; padding: 24px 16px 64px; color: var(--ink);
-  }
-  h1 { font-size: 1.5rem; margin-bottom: 4px; }
-  .subtitle { color: var(--muted); font-size: 0.9rem; margin-bottom: 24px; }
-  .updated { color: var(--muted); font-size: 0.8rem; margin-bottom: 24px; }
-  .search {
-    width: 100%; padding: 10px 12px; font-size: 1rem;
-    border: 1px solid var(--border); border-radius: 8px; margin-bottom: 20px;
-  }
-  .day-card { border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; }
-  .day-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px; }
-  .day-name { font-weight: 600; font-size: 1.05rem; }
-  .day-count { font-size: 0.8rem; color: var(--muted); }
-  .museum-list { display: flex; flex-wrap: wrap; gap: 8px; }
-  .museum-pill {
-    display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px;
-    border-radius: 999px; font-size: 0.85rem; text-decoration: none;
-    background: var(--green-bg); color: var(--green); border: 1px solid rgba(46,125,50,0.25);
-  }
-  .museum-pill:hover { filter: brightness(0.95); }
-  .error-banner {
-    background: #fff4e5; border: 1px solid #f0c987; border-radius: 8px;
-    padding: 10px 14px; font-size: 0.85rem; color: #7a5200; margin-bottom: 20px;
-  }
-  footer { margin-top: 40px; font-size: 0.75rem; color: var(--muted); text-align: center; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NRPL Museum Pass Availability Dashboard</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js for reactive UI -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
-<body>
-  <h1>NRPL Museum Pass Availability</h1>
-  <div class="subtitle">New Rochelle Public Library &mdash; free museum passes, summarized by day</div>
-  <div class="updated" id="updated"></div>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col" x-data="museumDashboard()">
 
-  <input class="search" id="search" placeholder="Filter by museum name (e.g. Frick, MoMA)..." />
+    <!-- Header -->
+    <header class="bg-indigo-600 text-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <h1 class="text-2xl font-bold">Museum Pass Availability Hub</h1>
+                <p class="text-indigo-200 text-sm">Find and reserve available library museum passes easily.</p>
+            </div>
+            <!-- View Switcher Tabs -->
+            <div class="bg-indigo-700 p-1 rounded-lg flex space-x-1">
+                <button @click="currentView = 'calendar'" 
+                        :class="currentView === 'calendar' ? 'bg-white text-indigo-700 font-semibold shadow' : 'text-indigo-100 hover:text-white'"
+                        class="px-4 py-2 rounded-md text-sm transition">
+                    📅 Month View
+                </button>
+                <button @click="currentView = 'grid'" 
+                        :class="currentView === 'grid' ? 'bg-white text-indigo-700 font-semibold shadow' : 'text-indigo-100 hover:text-white'"
+                        class="px-4 py-2 rounded-md text-sm transition">
+                    🎴 Card Grid View
+                </button>
+            </div>
+        </div>
+    </header>
 
-  <div id="errorBanner"></div>
-  <div id="days"></div>
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 py-8 flex-grow w-full grid grid-cols-1 lg:grid-cols-4 gap-8">
+        
+        <!-- Sidebar Filters -->
+        <aside class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 lg:col-span-1 space-y-6 h-fit">
+            <div class="flex justify-between items-center">
+                <h2 class="font-bold text-lg text-slate-900">Filters</h2>
+                <button @click="resetFilters()" class="text-xs text-indigo-600 hover:underline">Reset All</button>
+            </div>
 
-  <footer>
-    Data pulled from <a href="https://nrpl.libcal.com/passes" target="_blank" rel="noopener">nrpl.libcal.com/passes</a>.
-    Always double-check on the library site before making plans.
-  </footer>
+            <!-- Search Filter -->
+            <div>
+                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Search Museum</label>
+                <input type="text" x-model="searchQuery" placeholder="Filter by name..." class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            </div>
 
-<script>
-async function load() {
-  const res = await fetch('data/availability.json', { cache: 'no-store' });
-  const data = await res.json();
-  render(data);
-}
+            <!-- Theme Filter Groupings -->
+            <div>
+                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Theme</label>
+                <div class="space-y-2">
+                    <template x-for="theme in availableThemes" :key="theme">
+                        <label class="flex items-center text-sm text-slate-700 cursor-pointer">
+                            <input type="checkbox" :value="theme" x-model="selectedThemes" class="rounded text-indigo-600 focus:ring-indigo-500 mr-2">
+                            <span x-text="theme"></span>
+                        </label>
+                    </template>
+                </div>
+            </div>
 
-function render(data) {
-  document.getElementById('updated').textContent =
-    'Last updated: ' + (data.generatedAt ? new Date(data.generatedAt).toLocaleString() : 'never yet');
+            <!-- Location / Region Filter Groupings -->
+            <div>
+                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Location / Region</label>
+                <div class="space-y-2">
+                    <template x-for="loc in availableLocations" :key="loc">
+                        <label class="flex items-center text-sm text-slate-700 cursor-pointer">
+                            <input type="checkbox" :value="loc" x-model="selectedLocations" class="rounded text-indigo-600 focus:ring-indigo-500 mr-2">
+                            <span x-text="loc"></span>
+                        </label>
+                    </template>
+                </div>
+            </div>
 
-  const failed = data.museums.filter(m => m.error);
-  if (failed.length) {
-    document.getElementById('errorBanner').innerHTML =
-      '<div class="error-banner">' +
-      failed.length + ' museum page(s) could not be read on the last run: ' +
-      failed.map(f => f.name).join(', ') +
-      '. They are left out of the summary below.</div>';
-  }
+            <!-- Individual Museum Checkboxes -->
+            <div>
+                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Specific Museums</label>
+                <div class="space-y-2 max-h-48 overflow-y-auto pr-1">
+                    <template x-for="museum in museums" :key="museum.id">
+                        <label class="flex items-center text-sm text-slate-700 cursor-pointer">
+                            <input type="checkbox" :value="museum.name" x-model="selectedMuseumNames" class="rounded text-indigo-600 focus:ring-indigo-500 mr-2">
+                            <span x-text="museum.name" class="truncate"></span>
+                        </label>
+                    </template>
+                </div>
+            </div>
+        </aside>
 
-  const byDate = {};
-  for (const museum of data.museums) {
-    if (museum.error) continue;
-    for (const [date, info] of Object.entries(museum.days || {})) {
-      if (!info.available) continue;
-      byDate[date] = byDate[date] || [];
-      byDate[date].push({ name: museum.name, url: info.bookingUrl || museum.url });
-    }
-  }
+        <!-- Content Area -->
+        <section class="lg:col-span-3 space-y-6">
+            
+            <!-- LOADING STATE -->
+            <div x-show="loading" class="text-center py-20">
+                <div class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-indigo-500 border-t-transparent"></div>
+                <p class="text-slate-500 mt-2">Loading museum pass availability...</p>
+            </div>
 
-  const container = document.getElementById('days');
-  container.innerHTML = '';
+            <!-- VIEW 1: MONTHLY CALENDAR VIEW -->
+            <div x-show="!loading && currentView === 'calendar'" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <!-- Calendar Header & Month Navigation -->
+                <div class="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
+                    <h2 class="text-xl font-bold text-slate-900" x-text="monthNames[calendarMonth] + ' ' + calendarYear"></h2>
+                    <div class="flex space-x-2">
+                        <button @click="changeMonth(-1)" class="px-3 py-1.5 border rounded-lg text-sm bg-white hover:bg-slate-100">&larr; Prev Month</button>
+                        <button @click="goToCurrentMonth()" class="px-3 py-1.5 border rounded-lg text-sm bg-white hover:bg-slate-100">Today</button>
+                        <button @click="changeMonth(1)" class="px-3 py-1.5 border rounded-lg text-sm bg-white hover:bg-slate-100">Next Month &rarr;</button>
+                    </div>
+                </div>
 
-  const today = new Date(); today.setHours(0,0,0,0);
-  const dates = Object.keys(byDate).sort();
+                <!-- Days of Week Header -->
+                <div class="grid grid-cols-7 gap-2 text-center font-semibold text-xs text-slate-400 uppercase mb-2">
+                    <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+                </div>
 
-  if (!dates.length) {
-    container.innerHTML = '<p>No availability data yet. Run the scraper (Actions tab) to populate this page.</p>';
-    return;
-  }
+                <!-- Calendar Grid Days -->
+                <div class="grid grid-cols-7 gap-2">
+                    <template x-for="day in calendarDays">
+                        <div :class="{
+                                'bg-slate-50 opacity-40': !day.isCurrentMonth,
+                                'bg-white border-slate-200': day.isCurrentMonth,
+                                'border-indigo-500 ring-1 ring-indigo-500': day.isToday
+                             }" 
+                             class="min-h-[120px] p-2 border rounded-lg flex flex-col justify-between overflow-hidden">
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs font-bold" :class="day.isToday ? 'bg-indigo-600 text-white px-1.5 py-0.5 rounded-full' : 'text-slate-700'" x-text="day.dateNumber"></span>
+                            </div>
+                            <!-- Available Museums as direct reservation links on this day -->
+                            <div class="space-y-1 overflow-y-auto max-h-[85px] mt-1">
+                                <template x-for="pass in getPassesForDate(day.dateString)" :key="pass.museumName">
+                                    <a :href="pass.bookingUrl" target="_blank" 
+                                       class="block text-[11px] bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200 rounded px-1.5 py-0.5 truncate font-medium transition"
+                                       :title="pass.museumName + ' (Available)'">
+                                        <span x-text="pass.museumName"></span>
+                                    </a>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
 
-  for (const date of dates) {
-    const d = new Date(date + 'T00:00:00');
-    if (d < today) continue;
-    const museumsForDay = byDate[date].sort((a,b) => a.name.localeCompare(b.name));
+            <!-- VIEW 2: CARD GRID VIEW -->
+            <div x-show="!loading && currentView === 'grid'" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <template x-for="museum in filteredMuseums" :key="museum.id">
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start gap-2 mb-2">
+                                <h3 class="font-bold text-lg text-slate-900" x-text="museum.name"></h3>
+                                <span class="text-xs px-2 py-1 bg-indigo-50 text-indigo-700 rounded-full font-medium" x-text="museum.theme || 'General'"></span>
+                            </div>
+                            <p class="text-xs text-slate-500 mb-4" x-text="museum.location || 'New York / Regional'"></p>
+                            
+                            <!-- Available Dates preview list -->
+                            <div class="mb-4">
+                                <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Available Dates:</h4>
+                                <div class="flex flex-wrap gap-1.5 max-h-28 overflow-y-auto">
+                                    <template x-for="slot in museum.availableSlots" :key="slot.date">
+                                        <a :href="slot.bookingUrl" target="_blank" class="text-xs bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200 px-2 py-0.5 rounded font-medium transition" x-text="formatDateShort(slot.date)" :title="'Book ' + museum.name"></a>
+                                    </template>
+                                    <template x-if="!museum.availableSlots || museum.availableSlots.length === 0">
+                                        <span class="text-xs text-slate-400 italic">No dates currently available</span>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
 
-    const card = document.createElement('div');
-    card.className = 'day-card';
-    card.dataset.museums = museumsForDay.map(m => m.name.toLowerCase()).join('|');
+                        <div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+                            <span class="text-xs text-slate-500" x-text="(museum.availableSlots ? museum.availableSlots.length : 0) + ' slots open'"></span>
+                        </div>
+                    </div>
+                </template>
+            </div>
 
-    const dayName = d.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' });
-    card.innerHTML = `
-      <div class="day-header">
-        <div class="day-name">${dayName}</div>
-        <div class="day-count">${museumsForDay.length} museum${museumsForDay.length === 1 ? '' : 's'}</div>
-      </div>
-      <div class="museum-list">
-        ${museumsForDay.map(m => `<a class="museum-pill" target="_blank" rel="noopener" href="${m.url}">${m.name}</a>`).join('')}
-      </div>
-    `;
-    container.appendChild(card);
-  }
+        </section>
+    </main>
 
-  document.getElementById('search').addEventListener('input', (e) => {
-    const q = e.target.value.trim().toLowerCase();
-    document.querySelectorAll('.day-card').forEach(card => {
-      card.style.display = (!q || card.dataset.museums.includes(q)) ? '' : 'none';
-    });
-  });
-}
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500">
+        <p>NRPL Museum Pass Hub &bull; Automatically updated via GitHub Actions</p>
+    </footer>
 
-load().catch(err => {
-  document.getElementById('days').innerHTML = '<p>Could not load availability data: ' + err.message + '</p>';
-});
-</script>
+    <!-- JavaScript Application Logic -->
+    <script>
+        function museumDashboard() {
+            return {
+                loading: true,
+                currentView: 'calendar',
+                museums: [],
+                searchQuery: '',
+                selectedThemes: [],
+                selectedLocations: [],
+                selectedMuseumNames: [],
+                availableThemes: ['Art', 'Science', 'Children\'s', 'History'],
+                availableLocations: ['New York City', 'Westchester', 'Connecticut'],
+                
+                // Calendar navigation state
+                calendarYear: new Date().getFullYear(),
+                calendarMonth: new Date().getMonth(),
+                monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+
+                init() {
+                    this.fetchData();
+                },
+
+                async fetchData() {
+                    try {
+                        const response = await fetch('./data/availability.json');
+                        const data = await response.json();
+                        // Expecting data structure mapping each museum with available slots containing date & bookingUrl
+                        this.museums = data;
+                        
+                        const themesSet = new Set(data.map(m => m.theme).filter(Boolean));
+                        if (themesSet.size > 0) this.availableThemes = Array.from(themesSet);
+
+                        const locsSet = new Set(data.map(m => m.location).filter(Boolean));
+                        if (locsSet.size > 0) this.availableLocations = Array.from(locsSet);
+
+                    } catch (err) {
+                        console.error('Failed to load availability.json:', err);
+                    } finally {
+                        this.loading = false;
+                    }
+                },
+
+                get filteredMuseums() {
+                    return this.museums.filter(m => {
+                        const matchesSearch = this.searchQuery === '' || m.name.toLowerCase().includes(this.searchQuery.toLowerCase());
+                        const matchesTheme = this.selectedThemes.length === 0 || this.selectedThemes.includes(m.theme);
+                        const matchesLoc = this.selectedLocations.length === 0 || this.selectedLocations.includes(m.location);
+                        const matchesName = this.selectedMuseumNames.length === 0 || this.selectedMuseumNames.includes(m.name);
+                        return matchesSearch && matchesTheme && matchesLoc && matchesName;
+                    });
+                },
+
+                getPassesForDate(dateStr) {
+                    let passes = [];
+                    this.filteredMuseums.forEach(museum => {
+                        if (museum.availableSlots) {
+                            museum.availableSlots.forEach(slot => {
+                                if (slot.date === dateStr) {
+                                    passes.push({
+                                        museumName: museum.name,
+                                        bookingUrl: slot.bookingUrl
+                                    });
+                                }
+                            });
+                        }
+                    });
+                    return passes;
+                },
+
+                get calendarDays() {
+                    const year = this.calendarYear;
+                    const month = this.calendarMonth;
+                    const firstDayIndex = new Date(year, month, 1).getDay();
+                    const totalDaysInMonth = new Date(year, month + 1, 0).getDate();
+                    const prevMonthDays = new Date(year, month, 0).getDate();
+                    
+                    let days = [];
+                    const todayStr = new Date().toISOString().split('T')[0];
+
+                    for (let i = firstDayIndex - 1; i >= 0; i--) {
+                        let dNum = prevMonthDays - i;
+                        let dDate = new Date(year, month - 1, dNum);
+                        days.push({
+                            dateNumber: dNum,
+                            dateString: this.formatDateString(dDate),
+                            isCurrentMonth: false,
+                            isToday: false
+                        });
+                    }
+
+                    for (let i = 1; i <= totalDaysInMonth; i++) {
+                        let dDate = new Date(year, month, i);
+                        let dStr = this.formatDateString(dDate);
+                        days.push({
+                            dateNumber: i,
+                            dateString: dStr,
+                            isCurrentMonth: true,
+                            isToday: (dStr === todayStr)
+                        });
+                    }
+
+                    let remainingCells = 7 - (days.length % 7);
+                    if (remainingCells < 7) {
+                        for (let i = 1; i <= remainingCells; i++) {
+                            let dDate = new Date(year, month + 1, i);
+                            days.push({
+                                dateNumber: i,
+                                dateString: this.formatDateString(dDate),
+                                isCurrentMonth: false,
+                                isToday: false
+                            });
+                        }
+                    }
+
+                    return days;
+                },
+
+                formatDateString(date) {
+                    let y = date.getFullYear();
+                    let m = String(date.getMonth() + 1).padStart(2, '0');
+                    let d = String(date.getDate()).padStart(2, '0');
+                    return `${y}-${m}-${d}`;
+                },
+
+                formatDateShort(dateStr) {
+                    try {
+                        const [y, m, d] = dateStr.split('-');
+                        const date = new Date(y, m - 1, d);
+                        return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+                    } catch (e) {
+                        return dateStr;
+                    }
+                },
+
+                changeMonth(direction) {
+                    this.calendarMonth += direction;
+                    if (this.calendarMonth > 11) {
+                        this.calendarMonth = 0;
+                        this.calendarYear++;
+                    } else if (this.calendarMonth < 0) {
+                        this.calendarMonth = 11;
+                        this.calendarYear--;
+                    }
+                },
+
+                goToCurrentMonth() {
+                    const now = new Date();
+                    this.calendarYear = now.getFullYear();
+                    this.calendarMonth = now.getMonth();
+                },
+
+                resetFilters() {
+                    this.searchQuery = '';
+                    this.selectedThemes = [];
+                    this.selectedLocations = [];
+                    this.selectedMuseumNames = [];
+                }
+            }
+        }
+    </script>
 </body>
 </html>
