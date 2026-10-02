@@ -1,21 +1,154 @@
 [
-  { "name": "9/11 Memorial & Museum", "id": "1ef845e67556" },
-  { "name": "American Museum of Natural History", "id": "c897c5432b25" },
-  { "name": "Children\u2019s Museum of Manhattan", "id": "c2922c29e6c8" },
-  { "name": "Guggenheim Museum", "id": "6d9648d70ef5" },
-  { "name": "Hudson River Museum", "id": "e09492fc0415" },
-  { "name": "Intrepid Sea, Air & Space Museum", "id": "ce70ac375385" },
-  { "name": "Katonah Museum of Art", "id": "5382c2c96ae3" },
-  { "name": "Museum of Modern Art", "id": "36c2dd43ab59" },
-  { "name": "Museum of the City of New York", "id": "f41b82a4d09a" },
-  { "name": "New York Hall of Science", "id": "8f28acfd35c8" },
-  { "name": "New York Historical & DiMenna Children\u2019s History Museum", "id": "4fae06580aef" },
-  { "name": "NY State Empire Pass", "id": "b0d22431752f" },
-  { "name": "Stamford Museum & Nature Center", "id": "299dc7f87c3d" },
-  { "name": "Stepping Stones Museum for Children", "id": "cd5760a178ee" },
-  { "name": "Storm King Art Center", "id": "2eec0f4436f3" },
-  { "name": "Sugar Hill Children\u2019s Museum of Art & Storytelling", "id": "913e43587ccf" },
-  { "name": "The Frick Collection", "id": "1f4459453d05" },
-  { "name": "The Jewish Museum", "id": "af12003014ca" },
-  { "name": "Westchester Children\u2019s Museum", "id": "7d16e533393f" }
+  {
+    "id": "1ef845e67556",
+    "name": "9/11 Memorial & Museum",
+    "theme": "History",
+    "themes": ["History"],
+    "location": "New York City",
+    "passType": "physical"
+  },
+  {
+    "id": "c897c5432b25",
+    "name": "American Museum of Natural History",
+    "theme": "Science",
+    "themes": ["Science", "Nature", "Children's", "History"],
+    "location": "New York City",
+    "passType": "physical"
+  },
+  {
+    "id": "c2922c29e6c8",
+    "name": "Children’s Museum of Manhattan",
+    "theme": "Children's",
+    "themes": ["Children's", "Art", "Science"],
+    "location": "New York City",
+    "passType": "digital"
+  },
+  {
+    "id": "6d9648d70ef5",
+    "name": "Guggenheim Museum",
+    "theme": "Art",
+    "themes": ["Art"],
+    "location": "New York City",
+    "passType": "physical"
+  },
+  {
+    "id": "e09492fc0415",
+    "name": "Hudson River Museum",
+    "theme": "Art",
+    "themes": ["Art", "Science", "Nature", "History", "Children's"],
+    "location": "Central Westchester County",
+    "passType": "physical"
+  },
+  {
+    "id": "ce70ac375385",
+    "name": "Intrepid Sea, Air & Space Museum",
+    "theme": "Science",
+    "themes": ["Science", "History", "Children's"],
+    "location": "New York City",
+    "passType": "physical"
+  },
+  {
+    "id": "5382c2c96ae3",
+    "name": "Katonah Museum of Art",
+    "theme": "Art",
+    "themes": ["Art", "Outdoors", "Children's"],
+    "location": "Northern Westchester County",
+    "passType": "physical"
+  },
+  {
+    "id": "36c2dd43ab59",
+    "name": "Museum of Modern Art",
+    "theme": "Art",
+    "themes": ["Art"],
+    "location": "New York City",
+    "passType": "physical"
+  },
+  {
+    "id": "f41b82a4d09a",
+    "name": "Museum of the City of New York",
+    "theme": "History",
+    "themes": ["History", "Art", "Children's"],
+    "location": "New York City",
+    "passType": "physical"
+  },
+  {
+    "id": "8f28acfd35c8",
+    "name": "New York Hall of Science",
+    "theme": "Science",
+    "themes": ["Science", "Children's"],
+    "location": "New York City",
+    "passType": "physical"
+  },
+  {
+    "id": "4fae06580aef",
+    "name": "New York Historical & DiMenna Children’s History Museum",
+    "theme": "History",
+    "themes": ["History", "Children's", "Art"],
+    "location": "New York City",
+    "passType": "digital"
+  },
+  {
+    "id": "b0d22431752f",
+    "name": "NY State Empire Pass",
+    "theme": "Outdoors",
+    "themes": ["Outdoors", "Nature"],
+    "location": "Central Westchester County",
+    "passType": "physical"
+  },
+  {
+    "id": "299dc7f87c3d",
+    "name": "Stamford Museum & Nature Center",
+    "theme": "Outdoors",
+    "themes": ["Outdoors", "Nature", "Children's", "Science", "Art"],
+    "location": "Connecticut",
+    "passType": "physical"
+  },
+  {
+    "id": "cd5760a178ee",
+    "name": "Stepping Stones Museum for Children",
+    "theme": "Children's",
+    "themes": ["Children's", "Science", "Art"],
+    "location": "Connecticut",
+    "passType": "physical"
+  },
+  {
+    "id": "2eec0f4436f3",
+    "name": "Storm King Art Center",
+    "theme": "Outdoors",
+    "themes": ["Outdoors", "Art", "Nature"],
+    "location": "Northern Westchester County",
+    "passType": "physical"
+  },
+  {
+    "id": "913e43587ccf",
+    "name": "Sugar Hill Children’s Museum of Art & Storytelling",
+    "theme": "Children's",
+    "themes": ["Children's", "Art"],
+    "location": "New York City",
+    "passType": "physical"
+  },
+  {
+    "id": "1f4459453d05",
+    "name": "The Frick Collection",
+    "theme": "Art",
+    "themes": ["Art", "History"],
+    "location": "New York City",
+    "passType": "digital"
+  },
+  {
+    "id": "af12003014ca",
+    "name": "The Jewish Museum",
+    "theme": "Art",
+    "themes": ["Art", "History"],
+    "location": "New York City",
+    "passType": "digital"
+  },
+  {
+    "id": "7d16e533393f",
+    "name": "Westchester Children’s Museum",
+    "theme": "Children's",
+    "themes": ["Children's", "Science", "Art"],
+    "location": "Central Westchester County",
+    "passType": "physical"
+  }
 ]
