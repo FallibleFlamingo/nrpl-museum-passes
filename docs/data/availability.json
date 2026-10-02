@@ -1,10 +1,13 @@
 {
-  "generatedAt": "2026-10-02T16:12:10.835Z",
+  "generatedAt": "2026-10-02T16:35:08.213Z",
   "museums": [
     {
       "name": "9/11 Memorial & Museum",
       "id": "1ef845e67556",
       "theme": "History",
+      "themes": [
+        "History"
+      ],
       "location": "New York City",
       "url": "https://nrpl.libcal.com/passes/1ef845e67556",
       "days": {
@@ -383,6 +386,12 @@
       "name": "American Museum of Natural History",
       "id": "c897c5432b25",
       "theme": "Science",
+      "themes": [
+        "Science",
+        "Nature",
+        "Children's",
+        "History"
+      ],
       "location": "New York City",
       "url": "https://nrpl.libcal.com/passes/c897c5432b25",
       "days": {
@@ -761,6 +770,11 @@
       "name": "Children’s Museum of Manhattan",
       "id": "c2922c29e6c8",
       "theme": "Children's",
+      "themes": [
+        "Children's",
+        "Art",
+        "Science"
+      ],
       "location": "New York City",
       "url": "https://nrpl.libcal.com/passes/c2922c29e6c8",
       "days": {
@@ -1139,6 +1153,9 @@
       "name": "Guggenheim Museum",
       "id": "6d9648d70ef5",
       "theme": "Art",
+      "themes": [
+        "Art"
+      ],
       "location": "New York City",
       "url": "https://nrpl.libcal.com/passes/6d9648d70ef5",
       "days": {
@@ -1164,15 +1181,15 @@
         },
         "2026-10-06": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-06&item=194737&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-06&item=194736&digital=0&physical=1&location=22127"
         },
         "2026-10-07": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-07&item=194737&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-07&item=194736&digital=0&physical=1&location=22127"
         },
         "2026-10-08": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-08&item=194736&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-08&item=194737&digital=0&physical=1&location=22127"
         },
         "2026-10-09": {
           "available": false,
@@ -1192,7 +1209,7 @@
         },
         "2026-10-13": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-13&item=194736&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-13&item=194737&digital=0&physical=1&location=22127"
         },
         "2026-10-14": {
           "available": true,
@@ -1204,7 +1221,7 @@
         },
         "2026-10-16": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-16&item=194736&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-16&item=194737&digital=0&physical=1&location=22127"
         },
         "2026-10-17": {
           "available": true,
@@ -1220,23 +1237,23 @@
         },
         "2026-10-20": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-20&item=194736&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-20&item=194737&digital=0&physical=1&location=22127"
         },
         "2026-10-21": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-21&item=194737&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-21&item=194736&digital=0&physical=1&location=22127"
         },
         "2026-10-22": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-22&item=194736&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-22&item=194737&digital=0&physical=1&location=22127"
         },
         "2026-10-23": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-23&item=194736&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-23&item=194737&digital=0&physical=1&location=22127"
         },
         "2026-10-24": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-24&item=194736&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-24&item=194737&digital=0&physical=1&location=22127"
         },
         "2026-10-25": {
           "available": false,
@@ -1248,23 +1265,23 @@
         },
         "2026-10-27": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-27&item=194736&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-27&item=194737&digital=0&physical=1&location=22127"
         },
         "2026-10-28": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-28&item=194736&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-28&item=194737&digital=0&physical=1&location=22127"
         },
         "2026-10-29": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-29&item=194736&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-29&item=194737&digital=0&physical=1&location=22127"
         },
         "2026-10-30": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-30&item=194736&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-30&item=194737&digital=0&physical=1&location=22127"
         },
         "2026-10-31": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-31&item=194736&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-10-31&item=194737&digital=0&physical=1&location=22127"
         },
         "2026-11-01": {
           "available": false,
@@ -1276,7 +1293,7 @@
         },
         "2026-11-03": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-11-03&item=194737&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-11-03&item=194736&digital=0&physical=1&location=22127"
         },
         "2026-11-04": {
           "available": true,
@@ -1284,15 +1301,15 @@
         },
         "2026-11-05": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-11-05&item=194737&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-11-05&item=194736&digital=0&physical=1&location=22127"
         },
         "2026-11-06": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-11-06&item=194737&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-11-06&item=194736&digital=0&physical=1&location=22127"
         },
         "2026-11-07": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-11-07&item=194737&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-11-07&item=194736&digital=0&physical=1&location=22127"
         },
         "2026-11-08": {
           "available": false,
@@ -1304,7 +1321,7 @@
         },
         "2026-11-10": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-11-10&item=194737&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-11-10&item=194736&digital=0&physical=1&location=22127"
         },
         "2026-11-11": {
           "available": false,
@@ -1336,15 +1353,15 @@
         },
         "2026-11-18": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-11-18&item=194736&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-11-18&item=194737&digital=0&physical=1&location=22127"
         },
         "2026-11-19": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-11-19&item=194736&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-11-19&item=194737&digital=0&physical=1&location=22127"
         },
         "2026-11-20": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-11-20&item=194737&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-11-20&item=194736&digital=0&physical=1&location=22127"
         },
         "2026-11-21": {
           "available": true,
@@ -1376,7 +1393,7 @@
         },
         "2026-11-28": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-11-28&item=194737&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-11-28&item=194736&digital=0&physical=1&location=22127"
         },
         "2026-11-29": {
           "available": false,
@@ -1388,7 +1405,7 @@
         },
         "2026-12-01": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-12-01&item=194736&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-12-01&item=194737&digital=0&physical=1&location=22127"
         },
         "2026-12-02": {
           "available": true,
@@ -1396,11 +1413,11 @@
         },
         "2026-12-03": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-12-03&item=194736&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-12-03&item=194737&digital=0&physical=1&location=22127"
         },
         "2026-12-04": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-12-04&item=194736&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-12-04&item=194737&digital=0&physical=1&location=22127"
         },
         "2026-12-05": {
           "available": true,
@@ -1420,15 +1437,15 @@
         },
         "2026-12-09": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-12-09&item=194737&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-12-09&item=194736&digital=0&physical=1&location=22127"
         },
         "2026-12-10": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-12-10&item=194737&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-12-10&item=194736&digital=0&physical=1&location=22127"
         },
         "2026-12-11": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-12-11&item=194737&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-12-11&item=194736&digital=0&physical=1&location=22127"
         },
         "2026-12-12": {
           "available": true,
@@ -1452,7 +1469,7 @@
         },
         "2026-12-17": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-12-17&item=194736&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-12-17&item=194737&digital=0&physical=1&location=22127"
         },
         "2026-12-18": {
           "available": true,
@@ -1460,7 +1477,7 @@
         },
         "2026-12-19": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-12-19&item=194736&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-12-19&item=194737&digital=0&physical=1&location=22127"
         },
         "2026-12-20": {
           "available": false,
@@ -1488,7 +1505,7 @@
         },
         "2026-12-26": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-12-26&item=194736&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-12-26&item=194737&digital=0&physical=1&location=22127"
         },
         "2026-12-27": {
           "available": false,
@@ -1500,7 +1517,7 @@
         },
         "2026-12-29": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-12-29&item=194737&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/6d9648d70ef5/physical?date=2026-12-29&item=194736&digital=0&physical=1&location=22127"
         },
         "2026-12-30": {
           "available": false,
@@ -1517,6 +1534,13 @@
       "name": "Hudson River Museum",
       "id": "e09492fc0415",
       "theme": "Art",
+      "themes": [
+        "Art",
+        "Science",
+        "Nature",
+        "History",
+        "Children's"
+      ],
       "location": "Central Westchester County",
       "url": "https://nrpl.libcal.com/passes/e09492fc0415",
       "days": {
@@ -1530,7 +1554,7 @@
         },
         "2026-10-03": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-10-03&item=194739&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-10-03&item=194738&digital=0&physical=1&location=22127"
         },
         "2026-10-04": {
           "available": false,
@@ -1550,7 +1574,7 @@
         },
         "2026-10-08": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-10-08&item=194738&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-10-08&item=194739&digital=0&physical=1&location=22127"
         },
         "2026-10-09": {
           "available": false,
@@ -1574,11 +1598,11 @@
         },
         "2026-10-14": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-10-14&item=194738&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-10-14&item=194739&digital=0&physical=1&location=22127"
         },
         "2026-10-15": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-10-15&item=194739&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-10-15&item=194738&digital=0&physical=1&location=22127"
         },
         "2026-10-16": {
           "available": true,
@@ -1586,7 +1610,7 @@
         },
         "2026-10-17": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-10-17&item=194739&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-10-17&item=194738&digital=0&physical=1&location=22127"
         },
         "2026-10-18": {
           "available": false,
@@ -1602,11 +1626,11 @@
         },
         "2026-10-21": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-10-21&item=194738&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-10-21&item=194739&digital=0&physical=1&location=22127"
         },
         "2026-10-22": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-10-22&item=194739&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-10-22&item=194738&digital=0&physical=1&location=22127"
         },
         "2026-10-23": {
           "available": true,
@@ -1614,7 +1638,7 @@
         },
         "2026-10-24": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-10-24&item=194738&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-10-24&item=194739&digital=0&physical=1&location=22127"
         },
         "2026-10-25": {
           "available": false,
@@ -1634,7 +1658,7 @@
         },
         "2026-10-29": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-10-29&item=194739&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-10-29&item=194738&digital=0&physical=1&location=22127"
         },
         "2026-10-30": {
           "available": true,
@@ -1642,7 +1666,7 @@
         },
         "2026-10-31": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-10-31&item=194739&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-10-31&item=194738&digital=0&physical=1&location=22127"
         },
         "2026-11-01": {
           "available": false,
@@ -1698,7 +1722,7 @@
         },
         "2026-11-14": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-11-14&item=194739&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-11-14&item=194738&digital=0&physical=1&location=22127"
         },
         "2026-11-15": {
           "available": false,
@@ -1714,19 +1738,19 @@
         },
         "2026-11-18": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-11-18&item=194739&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-11-18&item=194738&digital=0&physical=1&location=22127"
         },
         "2026-11-19": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-11-19&item=194738&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-11-19&item=194739&digital=0&physical=1&location=22127"
         },
         "2026-11-20": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-11-20&item=194738&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-11-20&item=194739&digital=0&physical=1&location=22127"
         },
         "2026-11-21": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-11-21&item=194739&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-11-21&item=194738&digital=0&physical=1&location=22127"
         },
         "2026-11-22": {
           "available": false,
@@ -1754,7 +1778,7 @@
         },
         "2026-11-28": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-11-28&item=194739&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-11-28&item=194738&digital=0&physical=1&location=22127"
         },
         "2026-11-29": {
           "available": false,
@@ -1770,7 +1794,7 @@
         },
         "2026-12-02": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-12-02&item=194738&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-12-02&item=194739&digital=0&physical=1&location=22127"
         },
         "2026-12-03": {
           "available": true,
@@ -1778,7 +1802,7 @@
         },
         "2026-12-04": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-12-04&item=194738&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-12-04&item=194739&digital=0&physical=1&location=22127"
         },
         "2026-12-05": {
           "available": true,
@@ -1806,7 +1830,7 @@
         },
         "2026-12-11": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-12-11&item=194738&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-12-11&item=194739&digital=0&physical=1&location=22127"
         },
         "2026-12-12": {
           "available": true,
@@ -1830,7 +1854,7 @@
         },
         "2026-12-17": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-12-17&item=194738&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-12-17&item=194739&digital=0&physical=1&location=22127"
         },
         "2026-12-18": {
           "available": true,
@@ -1866,7 +1890,7 @@
         },
         "2026-12-26": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-12-26&item=194739&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/e09492fc0415/physical?date=2026-12-26&item=194738&digital=0&physical=1&location=22127"
         },
         "2026-12-27": {
           "available": false,
@@ -1895,6 +1919,11 @@
       "name": "Intrepid Sea, Air & Space Museum",
       "id": "ce70ac375385",
       "theme": "Science",
+      "themes": [
+        "Science",
+        "History",
+        "Children's"
+      ],
       "location": "New York City",
       "url": "https://nrpl.libcal.com/passes/ce70ac375385",
       "days": {
@@ -1920,11 +1949,11 @@
         },
         "2026-10-06": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-10-06&item=194741&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-10-06&item=194740&digital=0&physical=1&location=22127"
         },
         "2026-10-07": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-10-07&item=194741&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-10-07&item=194740&digital=0&physical=1&location=22127"
         },
         "2026-10-08": {
           "available": true,
@@ -2004,23 +2033,23 @@
         },
         "2026-10-27": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-10-27&item=194740&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-10-27&item=194741&digital=0&physical=1&location=22127"
         },
         "2026-10-28": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-10-28&item=194740&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-10-28&item=194741&digital=0&physical=1&location=22127"
         },
         "2026-10-29": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-10-29&item=194740&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-10-29&item=194741&digital=0&physical=1&location=22127"
         },
         "2026-10-30": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-10-30&item=194741&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-10-30&item=194740&digital=0&physical=1&location=22127"
         },
         "2026-10-31": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-10-31&item=194740&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-10-31&item=194741&digital=0&physical=1&location=22127"
         },
         "2026-11-01": {
           "available": false,
@@ -2032,11 +2061,11 @@
         },
         "2026-11-03": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-11-03&item=194741&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-11-03&item=194740&digital=0&physical=1&location=22127"
         },
         "2026-11-04": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-11-04&item=194741&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-11-04&item=194740&digital=0&physical=1&location=22127"
         },
         "2026-11-05": {
           "available": true,
@@ -2044,11 +2073,11 @@
         },
         "2026-11-06": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-11-06&item=194740&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-11-06&item=194741&digital=0&physical=1&location=22127"
         },
         "2026-11-07": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-11-07&item=194740&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-11-07&item=194741&digital=0&physical=1&location=22127"
         },
         "2026-11-08": {
           "available": false,
@@ -2060,7 +2089,7 @@
         },
         "2026-11-10": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-11-10&item=194740&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-11-10&item=194741&digital=0&physical=1&location=22127"
         },
         "2026-11-11": {
           "available": false,
@@ -2076,7 +2105,7 @@
         },
         "2026-11-14": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-11-14&item=194741&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-11-14&item=194740&digital=0&physical=1&location=22127"
         },
         "2026-11-15": {
           "available": false,
@@ -2096,11 +2125,11 @@
         },
         "2026-11-19": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-11-19&item=194741&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-11-19&item=194740&digital=0&physical=1&location=22127"
         },
         "2026-11-20": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-11-20&item=194741&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-11-20&item=194740&digital=0&physical=1&location=22127"
         },
         "2026-11-21": {
           "available": true,
@@ -2144,7 +2173,7 @@
         },
         "2026-12-01": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-12-01&item=194741&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-12-01&item=194740&digital=0&physical=1&location=22127"
         },
         "2026-12-02": {
           "available": true,
@@ -2184,7 +2213,7 @@
         },
         "2026-12-11": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-12-11&item=194740&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-12-11&item=194741&digital=0&physical=1&location=22127"
         },
         "2026-12-12": {
           "available": true,
@@ -2200,7 +2229,7 @@
         },
         "2026-12-15": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-12-15&item=194741&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-12-15&item=194740&digital=0&physical=1&location=22127"
         },
         "2026-12-16": {
           "available": true,
@@ -2208,15 +2237,15 @@
         },
         "2026-12-17": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-12-17&item=194741&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-12-17&item=194740&digital=0&physical=1&location=22127"
         },
         "2026-12-18": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-12-18&item=194740&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-12-18&item=194741&digital=0&physical=1&location=22127"
         },
         "2026-12-19": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-12-19&item=194741&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-12-19&item=194740&digital=0&physical=1&location=22127"
         },
         "2026-12-20": {
           "available": false,
@@ -2236,7 +2265,7 @@
         },
         "2026-12-24": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-12-24&item=194740&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-12-24&item=194741&digital=0&physical=1&location=22127"
         },
         "2026-12-25": {
           "available": false,
@@ -2244,7 +2273,7 @@
         },
         "2026-12-26": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-12-26&item=194741&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-12-26&item=194740&digital=0&physical=1&location=22127"
         },
         "2026-12-27": {
           "available": false,
@@ -2256,7 +2285,7 @@
         },
         "2026-12-29": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-12-29&item=194741&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/ce70ac375385/physical?date=2026-12-29&item=194740&digital=0&physical=1&location=22127"
         },
         "2026-12-30": {
           "available": false,
@@ -2273,6 +2302,11 @@
       "name": "Katonah Museum of Art",
       "id": "5382c2c96ae3",
       "theme": "Art",
+      "themes": [
+        "Art",
+        "Outdoors",
+        "Children's"
+      ],
       "location": "Northern Westchester County",
       "url": "https://nrpl.libcal.com/passes/5382c2c96ae3",
       "days": {
@@ -2306,7 +2340,7 @@
         },
         "2026-10-08": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-10-08&item=194743&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-10-08&item=194742&digital=0&physical=1&location=22127"
         },
         "2026-10-09": {
           "available": false,
@@ -2330,11 +2364,11 @@
         },
         "2026-10-14": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-10-14&item=194743&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-10-14&item=194742&digital=0&physical=1&location=22127"
         },
         "2026-10-15": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-10-15&item=194742&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-10-15&item=194743&digital=0&physical=1&location=22127"
         },
         "2026-10-16": {
           "available": true,
@@ -2342,7 +2376,7 @@
         },
         "2026-10-17": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-10-17&item=194743&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-10-17&item=194742&digital=0&physical=1&location=22127"
         },
         "2026-10-18": {
           "available": false,
@@ -2358,11 +2392,11 @@
         },
         "2026-10-21": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-10-21&item=194742&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-10-21&item=194743&digital=0&physical=1&location=22127"
         },
         "2026-10-22": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-10-22&item=194742&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-10-22&item=194743&digital=0&physical=1&location=22127"
         },
         "2026-10-23": {
           "available": true,
@@ -2370,7 +2404,7 @@
         },
         "2026-10-24": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-10-24&item=194742&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-10-24&item=194743&digital=0&physical=1&location=22127"
         },
         "2026-10-25": {
           "available": false,
@@ -2386,7 +2420,7 @@
         },
         "2026-10-28": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-10-28&item=194742&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-10-28&item=194743&digital=0&physical=1&location=22127"
         },
         "2026-10-29": {
           "available": true,
@@ -2394,7 +2428,7 @@
         },
         "2026-10-30": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-10-30&item=194742&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-10-30&item=194743&digital=0&physical=1&location=22127"
         },
         "2026-10-31": {
           "available": true,
@@ -2414,7 +2448,7 @@
         },
         "2026-11-04": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-11-04&item=194742&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-11-04&item=194743&digital=0&physical=1&location=22127"
         },
         "2026-11-05": {
           "available": true,
@@ -2422,7 +2456,7 @@
         },
         "2026-11-06": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-11-06&item=194742&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-11-06&item=194743&digital=0&physical=1&location=22127"
         },
         "2026-11-07": {
           "available": true,
@@ -2450,7 +2484,7 @@
         },
         "2026-11-13": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-11-13&item=194742&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-11-13&item=194743&digital=0&physical=1&location=22127"
         },
         "2026-11-14": {
           "available": true,
@@ -2478,11 +2512,11 @@
         },
         "2026-11-20": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-11-20&item=194743&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-11-20&item=194742&digital=0&physical=1&location=22127"
         },
         "2026-11-21": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-11-21&item=194742&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-11-21&item=194743&digital=0&physical=1&location=22127"
         },
         "2026-11-22": {
           "available": false,
@@ -2526,7 +2560,7 @@
         },
         "2026-12-02": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-12-02&item=194742&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-12-02&item=194743&digital=0&physical=1&location=22127"
         },
         "2026-12-03": {
           "available": true,
@@ -2534,11 +2568,11 @@
         },
         "2026-12-04": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-12-04&item=194743&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-12-04&item=194742&digital=0&physical=1&location=22127"
         },
         "2026-12-05": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-12-05&item=194742&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-12-05&item=194743&digital=0&physical=1&location=22127"
         },
         "2026-12-06": {
           "available": false,
@@ -2562,11 +2596,11 @@
         },
         "2026-12-11": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-12-11&item=194742&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-12-11&item=194743&digital=0&physical=1&location=22127"
         },
         "2026-12-12": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-12-12&item=194742&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-12-12&item=194743&digital=0&physical=1&location=22127"
         },
         "2026-12-13": {
           "available": false,
@@ -2582,7 +2616,7 @@
         },
         "2026-12-16": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-12-16&item=194742&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-12-16&item=194743&digital=0&physical=1&location=22127"
         },
         "2026-12-17": {
           "available": true,
@@ -2590,11 +2624,11 @@
         },
         "2026-12-18": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-12-18&item=194742&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-12-18&item=194743&digital=0&physical=1&location=22127"
         },
         "2026-12-19": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-12-19&item=194742&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-12-19&item=194743&digital=0&physical=1&location=22127"
         },
         "2026-12-20": {
           "available": false,
@@ -2614,7 +2648,7 @@
         },
         "2026-12-24": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-12-24&item=194742&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/5382c2c96ae3/physical?date=2026-12-24&item=194743&digital=0&physical=1&location=22127"
         },
         "2026-12-25": {
           "available": false,
@@ -2651,6 +2685,9 @@
       "name": "Museum of Modern Art",
       "id": "36c2dd43ab59",
       "theme": "Art",
+      "themes": [
+        "Art"
+      ],
       "location": "New York City",
       "url": "https://nrpl.libcal.com/passes/36c2dd43ab59",
       "days": {
@@ -2660,7 +2697,7 @@
         },
         "2026-10-02": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-10-02&item=194745&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-10-02&item=194744&digital=0&physical=1&location=22127"
         },
         "2026-10-03": {
           "available": true,
@@ -2676,11 +2713,11 @@
         },
         "2026-10-06": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-10-06&item=194745&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-10-06&item=194744&digital=0&physical=1&location=22127"
         },
         "2026-10-07": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-10-07&item=194745&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-10-07&item=194744&digital=0&physical=1&location=22127"
         },
         "2026-10-08": {
           "available": true,
@@ -2708,7 +2745,7 @@
         },
         "2026-10-14": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-10-14&item=194744&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-10-14&item=194745&digital=0&physical=1&location=22127"
         },
         "2026-10-15": {
           "available": true,
@@ -2732,7 +2769,7 @@
         },
         "2026-10-20": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-10-20&item=194745&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-10-20&item=194744&digital=0&physical=1&location=22127"
         },
         "2026-10-21": {
           "available": true,
@@ -2760,7 +2797,7 @@
         },
         "2026-10-27": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-10-27&item=194744&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-10-27&item=194745&digital=0&physical=1&location=22127"
         },
         "2026-10-28": {
           "available": true,
@@ -2768,11 +2805,11 @@
         },
         "2026-10-29": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-10-29&item=194744&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-10-29&item=194745&digital=0&physical=1&location=22127"
         },
         "2026-10-30": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-10-30&item=194744&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-10-30&item=194745&digital=0&physical=1&location=22127"
         },
         "2026-10-31": {
           "available": true,
@@ -2792,7 +2829,7 @@
         },
         "2026-11-04": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-11-04&item=194745&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-11-04&item=194744&digital=0&physical=1&location=22127"
         },
         "2026-11-05": {
           "available": true,
@@ -2800,7 +2837,7 @@
         },
         "2026-11-06": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-11-06&item=194745&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-11-06&item=194744&digital=0&physical=1&location=22127"
         },
         "2026-11-07": {
           "available": true,
@@ -2828,7 +2865,7 @@
         },
         "2026-11-13": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-11-13&item=194744&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-11-13&item=194745&digital=0&physical=1&location=22127"
         },
         "2026-11-14": {
           "available": true,
@@ -2852,7 +2889,7 @@
         },
         "2026-11-19": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-11-19&item=194745&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-11-19&item=194744&digital=0&physical=1&location=22127"
         },
         "2026-11-20": {
           "available": true,
@@ -2860,7 +2897,7 @@
         },
         "2026-11-21": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-11-21&item=194745&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-11-21&item=194744&digital=0&physical=1&location=22127"
         },
         "2026-11-22": {
           "available": false,
@@ -2888,7 +2925,7 @@
         },
         "2026-11-28": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-11-28&item=194745&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-11-28&item=194744&digital=0&physical=1&location=22127"
         },
         "2026-11-29": {
           "available": false,
@@ -2904,15 +2941,15 @@
         },
         "2026-12-02": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-12-02&item=194744&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-12-02&item=194745&digital=0&physical=1&location=22127"
         },
         "2026-12-03": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-12-03&item=194745&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-12-03&item=194744&digital=0&physical=1&location=22127"
         },
         "2026-12-04": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-12-04&item=194745&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-12-04&item=194744&digital=0&physical=1&location=22127"
         },
         "2026-12-05": {
           "available": true,
@@ -2936,7 +2973,7 @@
         },
         "2026-12-10": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-12-10&item=194744&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-12-10&item=194745&digital=0&physical=1&location=22127"
         },
         "2026-12-11": {
           "available": true,
@@ -2944,7 +2981,7 @@
         },
         "2026-12-12": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-12-12&item=194744&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-12-12&item=194745&digital=0&physical=1&location=22127"
         },
         "2026-12-13": {
           "available": false,
@@ -2956,7 +2993,7 @@
         },
         "2026-12-15": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-12-15&item=194744&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-12-15&item=194745&digital=0&physical=1&location=22127"
         },
         "2026-12-16": {
           "available": true,
@@ -2964,7 +3001,7 @@
         },
         "2026-12-17": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-12-17&item=194745&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-12-17&item=194744&digital=0&physical=1&location=22127"
         },
         "2026-12-18": {
           "available": true,
@@ -2972,7 +3009,7 @@
         },
         "2026-12-19": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-12-19&item=194744&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-12-19&item=194745&digital=0&physical=1&location=22127"
         },
         "2026-12-20": {
           "available": false,
@@ -2984,7 +3021,7 @@
         },
         "2026-12-22": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-12-22&item=194744&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/36c2dd43ab59/physical?date=2026-12-22&item=194745&digital=0&physical=1&location=22127"
         },
         "2026-12-23": {
           "available": false,
@@ -3029,6 +3066,11 @@
       "name": "Museum of the City of New York",
       "id": "f41b82a4d09a",
       "theme": "History",
+      "themes": [
+        "History",
+        "Art",
+        "Children's"
+      ],
       "location": "New York City",
       "url": "https://nrpl.libcal.com/passes/f41b82a4d09a",
       "days": {
@@ -3042,7 +3084,7 @@
         },
         "2026-10-03": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-10-03&item=194747&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-10-03&item=194746&digital=0&physical=1&location=22127"
         },
         "2026-10-04": {
           "available": false,
@@ -3054,11 +3096,11 @@
         },
         "2026-10-06": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-10-06&item=194746&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-10-06&item=194747&digital=0&physical=1&location=22127"
         },
         "2026-10-07": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-10-07&item=194747&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-10-07&item=194746&digital=0&physical=1&location=22127"
         },
         "2026-10-08": {
           "available": true,
@@ -3138,7 +3180,7 @@
         },
         "2026-10-27": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-10-27&item=194747&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-10-27&item=194746&digital=0&physical=1&location=22127"
         },
         "2026-10-28": {
           "available": true,
@@ -3146,15 +3188,15 @@
         },
         "2026-10-29": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-10-29&item=194747&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-10-29&item=194746&digital=0&physical=1&location=22127"
         },
         "2026-10-30": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-10-30&item=194747&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-10-30&item=194746&digital=0&physical=1&location=22127"
         },
         "2026-10-31": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-10-31&item=194746&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-10-31&item=194747&digital=0&physical=1&location=22127"
         },
         "2026-11-01": {
           "available": false,
@@ -3182,7 +3224,7 @@
         },
         "2026-11-07": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-11-07&item=194747&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-11-07&item=194746&digital=0&physical=1&location=22127"
         },
         "2026-11-08": {
           "available": false,
@@ -3194,7 +3236,7 @@
         },
         "2026-11-10": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-11-10&item=194746&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-11-10&item=194747&digital=0&physical=1&location=22127"
         },
         "2026-11-11": {
           "available": false,
@@ -3202,7 +3244,7 @@
         },
         "2026-11-12": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-11-12&item=194746&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-11-12&item=194747&digital=0&physical=1&location=22127"
         },
         "2026-11-13": {
           "available": true,
@@ -3222,7 +3264,7 @@
         },
         "2026-11-17": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-11-17&item=194746&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-11-17&item=194747&digital=0&physical=1&location=22127"
         },
         "2026-11-18": {
           "available": true,
@@ -3238,7 +3280,7 @@
         },
         "2026-11-21": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-11-21&item=194747&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-11-21&item=194746&digital=0&physical=1&location=22127"
         },
         "2026-11-22": {
           "available": false,
@@ -3278,23 +3320,23 @@
         },
         "2026-12-01": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-12-01&item=194747&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-12-01&item=194746&digital=0&physical=1&location=22127"
         },
         "2026-12-02": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-12-02&item=194747&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-12-02&item=194746&digital=0&physical=1&location=22127"
         },
         "2026-12-03": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-12-03&item=194746&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-12-03&item=194747&digital=0&physical=1&location=22127"
         },
         "2026-12-04": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-12-04&item=194747&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-12-04&item=194746&digital=0&physical=1&location=22127"
         },
         "2026-12-05": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-12-05&item=194747&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-12-05&item=194746&digital=0&physical=1&location=22127"
         },
         "2026-12-06": {
           "available": false,
@@ -3306,11 +3348,11 @@
         },
         "2026-12-08": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-12-08&item=194746&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-12-08&item=194747&digital=0&physical=1&location=22127"
         },
         "2026-12-09": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-12-09&item=194746&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-12-09&item=194747&digital=0&physical=1&location=22127"
         },
         "2026-12-10": {
           "available": true,
@@ -3322,7 +3364,7 @@
         },
         "2026-12-12": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-12-12&item=194747&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-12-12&item=194746&digital=0&physical=1&location=22127"
         },
         "2026-12-13": {
           "available": false,
@@ -3334,7 +3376,7 @@
         },
         "2026-12-15": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-12-15&item=194747&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-12-15&item=194746&digital=0&physical=1&location=22127"
         },
         "2026-12-16": {
           "available": true,
@@ -3346,7 +3388,7 @@
         },
         "2026-12-18": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-12-18&item=194746&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-12-18&item=194747&digital=0&physical=1&location=22127"
         },
         "2026-12-19": {
           "available": true,
@@ -3378,7 +3420,7 @@
         },
         "2026-12-26": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-12-26&item=194746&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-12-26&item=194747&digital=0&physical=1&location=22127"
         },
         "2026-12-27": {
           "available": false,
@@ -3390,7 +3432,7 @@
         },
         "2026-12-29": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-12-29&item=194746&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/f41b82a4d09a/physical?date=2026-12-29&item=194747&digital=0&physical=1&location=22127"
         },
         "2026-12-30": {
           "available": false,
@@ -3407,6 +3449,10 @@
       "name": "New York Hall of Science",
       "id": "8f28acfd35c8",
       "theme": "Science",
+      "themes": [
+        "Science",
+        "Children's"
+      ],
       "location": "New York City",
       "url": "https://nrpl.libcal.com/passes/8f28acfd35c8",
       "days": {
@@ -3436,7 +3482,7 @@
         },
         "2026-10-07": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-10-07&item=194748&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-10-07&item=194749&digital=0&physical=1&location=22127"
         },
         "2026-10-08": {
           "available": true,
@@ -3464,11 +3510,11 @@
         },
         "2026-10-14": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-10-14&item=194749&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-10-14&item=194748&digital=0&physical=1&location=22127"
         },
         "2026-10-15": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-10-15&item=194748&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-10-15&item=194749&digital=0&physical=1&location=22127"
         },
         "2026-10-16": {
           "available": true,
@@ -3476,7 +3522,7 @@
         },
         "2026-10-17": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-10-17&item=194749&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-10-17&item=194748&digital=0&physical=1&location=22127"
         },
         "2026-10-18": {
           "available": false,
@@ -3496,7 +3542,7 @@
         },
         "2026-10-22": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-10-22&item=194749&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-10-22&item=194748&digital=0&physical=1&location=22127"
         },
         "2026-10-23": {
           "available": true,
@@ -3520,11 +3566,11 @@
         },
         "2026-10-28": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-10-28&item=194748&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-10-28&item=194749&digital=0&physical=1&location=22127"
         },
         "2026-10-29": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-10-29&item=194749&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-10-29&item=194748&digital=0&physical=1&location=22127"
         },
         "2026-10-30": {
           "available": true,
@@ -3532,7 +3578,7 @@
         },
         "2026-10-31": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-10-31&item=194748&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-10-31&item=194749&digital=0&physical=1&location=22127"
         },
         "2026-11-01": {
           "available": false,
@@ -3556,7 +3602,7 @@
         },
         "2026-11-06": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-11-06&item=194749&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-11-06&item=194748&digital=0&physical=1&location=22127"
         },
         "2026-11-07": {
           "available": true,
@@ -3588,7 +3634,7 @@
         },
         "2026-11-14": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-11-14&item=194748&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-11-14&item=194749&digital=0&physical=1&location=22127"
         },
         "2026-11-15": {
           "available": false,
@@ -3608,7 +3654,7 @@
         },
         "2026-11-19": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-11-19&item=194748&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-11-19&item=194749&digital=0&physical=1&location=22127"
         },
         "2026-11-20": {
           "available": true,
@@ -3660,7 +3706,7 @@
         },
         "2026-12-02": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-12-02&item=194749&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-12-02&item=194748&digital=0&physical=1&location=22127"
         },
         "2026-12-03": {
           "available": true,
@@ -3688,11 +3734,11 @@
         },
         "2026-12-09": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-12-09&item=194748&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-12-09&item=194749&digital=0&physical=1&location=22127"
         },
         "2026-12-10": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-12-10&item=194749&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-12-10&item=194748&digital=0&physical=1&location=22127"
         },
         "2026-12-11": {
           "available": true,
@@ -3720,7 +3766,7 @@
         },
         "2026-12-17": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-12-17&item=194749&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-12-17&item=194748&digital=0&physical=1&location=22127"
         },
         "2026-12-18": {
           "available": true,
@@ -3756,7 +3802,7 @@
         },
         "2026-12-26": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-12-26&item=194748&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/8f28acfd35c8/physical?date=2026-12-26&item=194749&digital=0&physical=1&location=22127"
         },
         "2026-12-27": {
           "available": false,
@@ -3785,6 +3831,11 @@
       "name": "New York Historical & DiMenna Children’s History Museum",
       "id": "4fae06580aef",
       "theme": "History",
+      "themes": [
+        "History",
+        "Children's",
+        "Art"
+      ],
       "location": "New York City",
       "url": "https://nrpl.libcal.com/passes/4fae06580aef",
       "days": {
@@ -4163,6 +4214,10 @@
       "name": "NY State Empire Pass",
       "id": "b0d22431752f",
       "theme": "Outdoors",
+      "themes": [
+        "Outdoors",
+        "Nature"
+      ],
       "location": "Central Westchester County",
       "url": "https://nrpl.libcal.com/passes/b0d22431752f",
       "days": {
@@ -4172,11 +4227,11 @@
         },
         "2026-10-02": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-10-02&item=194751&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-10-02&item=194750&digital=0&physical=1&location=22127"
         },
         "2026-10-03": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-10-03&item=194751&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-10-03&item=194750&digital=0&physical=1&location=22127"
         },
         "2026-10-04": {
           "available": false,
@@ -4188,11 +4243,11 @@
         },
         "2026-10-06": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-10-06&item=194751&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-10-06&item=194750&digital=0&physical=1&location=22127"
         },
         "2026-10-07": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-10-07&item=194751&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-10-07&item=194750&digital=0&physical=1&location=22127"
         },
         "2026-10-08": {
           "available": true,
@@ -4216,11 +4271,11 @@
         },
         "2026-10-13": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-10-13&item=194751&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-10-13&item=194750&digital=0&physical=1&location=22127"
         },
         "2026-10-14": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-10-14&item=194750&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-10-14&item=194751&digital=0&physical=1&location=22127"
         },
         "2026-10-15": {
           "available": true,
@@ -4232,7 +4287,7 @@
         },
         "2026-10-17": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-10-17&item=194751&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-10-17&item=194750&digital=0&physical=1&location=22127"
         },
         "2026-10-18": {
           "available": false,
@@ -4244,7 +4299,7 @@
         },
         "2026-10-20": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-10-20&item=194750&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-10-20&item=194751&digital=0&physical=1&location=22127"
         },
         "2026-10-21": {
           "available": true,
@@ -4252,7 +4307,7 @@
         },
         "2026-10-22": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-10-22&item=194750&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-10-22&item=194751&digital=0&physical=1&location=22127"
         },
         "2026-10-23": {
           "available": true,
@@ -4276,7 +4331,7 @@
         },
         "2026-10-28": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-10-28&item=194750&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-10-28&item=194751&digital=0&physical=1&location=22127"
         },
         "2026-10-29": {
           "available": true,
@@ -4284,11 +4339,11 @@
         },
         "2026-10-30": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-10-30&item=194750&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-10-30&item=194751&digital=0&physical=1&location=22127"
         },
         "2026-10-31": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-10-31&item=194751&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-10-31&item=194750&digital=0&physical=1&location=22127"
         },
         "2026-11-01": {
           "available": false,
@@ -4304,19 +4359,19 @@
         },
         "2026-11-04": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-11-04&item=194751&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-11-04&item=194750&digital=0&physical=1&location=22127"
         },
         "2026-11-05": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-11-05&item=194750&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-11-05&item=194751&digital=0&physical=1&location=22127"
         },
         "2026-11-06": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-11-06&item=194750&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-11-06&item=194751&digital=0&physical=1&location=22127"
         },
         "2026-11-07": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-11-07&item=194751&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-11-07&item=194750&digital=0&physical=1&location=22127"
         },
         "2026-11-08": {
           "available": false,
@@ -4336,15 +4391,15 @@
         },
         "2026-11-12": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-11-12&item=194750&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-11-12&item=194751&digital=0&physical=1&location=22127"
         },
         "2026-11-13": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-11-13&item=194750&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-11-13&item=194751&digital=0&physical=1&location=22127"
         },
         "2026-11-14": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-11-14&item=194751&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-11-14&item=194750&digital=0&physical=1&location=22127"
         },
         "2026-11-15": {
           "available": false,
@@ -4356,11 +4411,11 @@
         },
         "2026-11-17": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-11-17&item=194751&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-11-17&item=194750&digital=0&physical=1&location=22127"
         },
         "2026-11-18": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-11-18&item=194751&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-11-18&item=194750&digital=0&physical=1&location=22127"
         },
         "2026-11-19": {
           "available": true,
@@ -4368,11 +4423,11 @@
         },
         "2026-11-20": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-11-20&item=194750&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-11-20&item=194751&digital=0&physical=1&location=22127"
         },
         "2026-11-21": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-11-21&item=194750&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-11-21&item=194751&digital=0&physical=1&location=22127"
         },
         "2026-11-22": {
           "available": false,
@@ -4400,7 +4455,7 @@
         },
         "2026-11-28": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-11-28&item=194750&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-11-28&item=194751&digital=0&physical=1&location=22127"
         },
         "2026-11-29": {
           "available": false,
@@ -4412,7 +4467,7 @@
         },
         "2026-12-01": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-12-01&item=194750&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-12-01&item=194751&digital=0&physical=1&location=22127"
         },
         "2026-12-02": {
           "available": true,
@@ -4420,7 +4475,7 @@
         },
         "2026-12-03": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-12-03&item=194750&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-12-03&item=194751&digital=0&physical=1&location=22127"
         },
         "2026-12-04": {
           "available": true,
@@ -4440,11 +4495,11 @@
         },
         "2026-12-08": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-12-08&item=194750&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-12-08&item=194751&digital=0&physical=1&location=22127"
         },
         "2026-12-09": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-12-09&item=194750&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-12-09&item=194751&digital=0&physical=1&location=22127"
         },
         "2026-12-10": {
           "available": true,
@@ -4452,7 +4507,7 @@
         },
         "2026-12-11": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-12-11&item=194751&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-12-11&item=194750&digital=0&physical=1&location=22127"
         },
         "2026-12-12": {
           "available": true,
@@ -4468,15 +4523,15 @@
         },
         "2026-12-15": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-12-15&item=194751&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-12-15&item=194750&digital=0&physical=1&location=22127"
         },
         "2026-12-16": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-12-16&item=194750&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-12-16&item=194751&digital=0&physical=1&location=22127"
         },
         "2026-12-17": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-12-17&item=194751&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-12-17&item=194750&digital=0&physical=1&location=22127"
         },
         "2026-12-18": {
           "available": true,
@@ -4504,7 +4559,7 @@
         },
         "2026-12-24": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-12-24&item=194751&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-12-24&item=194750&digital=0&physical=1&location=22127"
         },
         "2026-12-25": {
           "available": false,
@@ -4512,7 +4567,7 @@
         },
         "2026-12-26": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-12-26&item=194751&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-12-26&item=194750&digital=0&physical=1&location=22127"
         },
         "2026-12-27": {
           "available": false,
@@ -4524,7 +4579,7 @@
         },
         "2026-12-29": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-12-29&item=194750&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/b0d22431752f/physical?date=2026-12-29&item=194751&digital=0&physical=1&location=22127"
         },
         "2026-12-30": {
           "available": false,
@@ -4541,6 +4596,13 @@
       "name": "Stamford Museum & Nature Center",
       "id": "299dc7f87c3d",
       "theme": "Outdoors",
+      "themes": [
+        "Outdoors",
+        "Nature",
+        "Children's",
+        "Science",
+        "Art"
+      ],
       "location": "Connecticut",
       "url": "https://nrpl.libcal.com/passes/299dc7f87c3d",
       "days": {
@@ -4554,7 +4616,7 @@
         },
         "2026-10-03": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-10-03&item=194752&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-10-03&item=194753&digital=0&physical=1&location=22127"
         },
         "2026-10-04": {
           "available": false,
@@ -4566,7 +4628,7 @@
         },
         "2026-10-06": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-10-06&item=194752&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-10-06&item=194753&digital=0&physical=1&location=22127"
         },
         "2026-10-07": {
           "available": true,
@@ -4594,11 +4656,11 @@
         },
         "2026-10-13": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-10-13&item=194753&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-10-13&item=194752&digital=0&physical=1&location=22127"
         },
         "2026-10-14": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-10-14&item=194753&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-10-14&item=194752&digital=0&physical=1&location=22127"
         },
         "2026-10-15": {
           "available": true,
@@ -4622,11 +4684,11 @@
         },
         "2026-10-20": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-10-20&item=194753&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-10-20&item=194752&digital=0&physical=1&location=22127"
         },
         "2026-10-21": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-10-21&item=194752&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-10-21&item=194753&digital=0&physical=1&location=22127"
         },
         "2026-10-22": {
           "available": true,
@@ -4634,11 +4696,11 @@
         },
         "2026-10-23": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-10-23&item=194753&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-10-23&item=194752&digital=0&physical=1&location=22127"
         },
         "2026-10-24": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-10-24&item=194752&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-10-24&item=194753&digital=0&physical=1&location=22127"
         },
         "2026-10-25": {
           "available": false,
@@ -4658,15 +4720,15 @@
         },
         "2026-10-29": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-10-29&item=194752&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-10-29&item=194753&digital=0&physical=1&location=22127"
         },
         "2026-10-30": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-10-30&item=194752&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-10-30&item=194753&digital=0&physical=1&location=22127"
         },
         "2026-10-31": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-10-31&item=194753&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-10-31&item=194752&digital=0&physical=1&location=22127"
         },
         "2026-11-01": {
           "available": false,
@@ -4682,7 +4744,7 @@
         },
         "2026-11-04": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-11-04&item=194753&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-11-04&item=194752&digital=0&physical=1&location=22127"
         },
         "2026-11-05": {
           "available": true,
@@ -4694,7 +4756,7 @@
         },
         "2026-11-07": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-11-07&item=194752&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-11-07&item=194753&digital=0&physical=1&location=22127"
         },
         "2026-11-08": {
           "available": false,
@@ -4706,7 +4768,7 @@
         },
         "2026-11-10": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-11-10&item=194753&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-11-10&item=194752&digital=0&physical=1&location=22127"
         },
         "2026-11-11": {
           "available": false,
@@ -4714,15 +4776,15 @@
         },
         "2026-11-12": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-11-12&item=194752&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-11-12&item=194753&digital=0&physical=1&location=22127"
         },
         "2026-11-13": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-11-13&item=194753&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-11-13&item=194752&digital=0&physical=1&location=22127"
         },
         "2026-11-14": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-11-14&item=194753&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-11-14&item=194752&digital=0&physical=1&location=22127"
         },
         "2026-11-15": {
           "available": false,
@@ -4734,7 +4796,7 @@
         },
         "2026-11-17": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-11-17&item=194752&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-11-17&item=194753&digital=0&physical=1&location=22127"
         },
         "2026-11-18": {
           "available": true,
@@ -4742,7 +4804,7 @@
         },
         "2026-11-19": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-11-19&item=194753&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-11-19&item=194752&digital=0&physical=1&location=22127"
         },
         "2026-11-20": {
           "available": true,
@@ -4750,7 +4812,7 @@
         },
         "2026-11-21": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-11-21&item=194753&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-11-21&item=194752&digital=0&physical=1&location=22127"
         },
         "2026-11-22": {
           "available": false,
@@ -4790,11 +4852,11 @@
         },
         "2026-12-01": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-01&item=194753&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-01&item=194752&digital=0&physical=1&location=22127"
         },
         "2026-12-02": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-02&item=194753&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-02&item=194752&digital=0&physical=1&location=22127"
         },
         "2026-12-03": {
           "available": true,
@@ -4806,7 +4868,7 @@
         },
         "2026-12-05": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-05&item=194752&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-05&item=194753&digital=0&physical=1&location=22127"
         },
         "2026-12-06": {
           "available": false,
@@ -4818,19 +4880,19 @@
         },
         "2026-12-08": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-08&item=194753&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-08&item=194752&digital=0&physical=1&location=22127"
         },
         "2026-12-09": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-09&item=194753&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-09&item=194752&digital=0&physical=1&location=22127"
         },
         "2026-12-10": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-10&item=194753&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-10&item=194752&digital=0&physical=1&location=22127"
         },
         "2026-12-11": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-11&item=194753&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-11&item=194752&digital=0&physical=1&location=22127"
         },
         "2026-12-12": {
           "available": true,
@@ -4846,23 +4908,23 @@
         },
         "2026-12-15": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-15&item=194753&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-15&item=194752&digital=0&physical=1&location=22127"
         },
         "2026-12-16": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-16&item=194753&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-16&item=194752&digital=0&physical=1&location=22127"
         },
         "2026-12-17": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-17&item=194753&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-17&item=194752&digital=0&physical=1&location=22127"
         },
         "2026-12-18": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-18&item=194752&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-18&item=194753&digital=0&physical=1&location=22127"
         },
         "2026-12-19": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-19&item=194752&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-19&item=194753&digital=0&physical=1&location=22127"
         },
         "2026-12-20": {
           "available": false,
@@ -4874,7 +4936,7 @@
         },
         "2026-12-22": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-22&item=194752&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-22&item=194753&digital=0&physical=1&location=22127"
         },
         "2026-12-23": {
           "available": false,
@@ -4890,7 +4952,7 @@
         },
         "2026-12-26": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-26&item=194753&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-26&item=194752&digital=0&physical=1&location=22127"
         },
         "2026-12-27": {
           "available": false,
@@ -4902,7 +4964,7 @@
         },
         "2026-12-29": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-29&item=194753&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/299dc7f87c3d/physical?date=2026-12-29&item=194752&digital=0&physical=1&location=22127"
         },
         "2026-12-30": {
           "available": false,
@@ -4919,6 +4981,11 @@
       "name": "Stepping Stones Museum for Children",
       "id": "cd5760a178ee",
       "theme": "Children's",
+      "themes": [
+        "Children's",
+        "Science",
+        "Art"
+      ],
       "location": "Connecticut",
       "url": "https://nrpl.libcal.com/passes/cd5760a178ee",
       "days": {
@@ -4944,7 +5011,7 @@
         },
         "2026-10-06": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-10-06&item=194754&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-10-06&item=194755&digital=0&physical=1&location=22127"
         },
         "2026-10-07": {
           "available": false,
@@ -4952,7 +5019,7 @@
         },
         "2026-10-08": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-10-08&item=194754&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-10-08&item=194755&digital=0&physical=1&location=22127"
         },
         "2026-10-09": {
           "available": false,
@@ -4972,7 +5039,7 @@
         },
         "2026-10-13": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-10-13&item=194754&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-10-13&item=194755&digital=0&physical=1&location=22127"
         },
         "2026-10-14": {
           "available": false,
@@ -4980,7 +5047,7 @@
         },
         "2026-10-15": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-10-15&item=194754&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-10-15&item=194755&digital=0&physical=1&location=22127"
         },
         "2026-10-16": {
           "available": true,
@@ -5012,11 +5079,11 @@
         },
         "2026-10-23": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-10-23&item=194755&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-10-23&item=194754&digital=0&physical=1&location=22127"
         },
         "2026-10-24": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-10-24&item=194755&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-10-24&item=194754&digital=0&physical=1&location=22127"
         },
         "2026-10-25": {
           "available": false,
@@ -5028,7 +5095,7 @@
         },
         "2026-10-27": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-10-27&item=194755&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-10-27&item=194754&digital=0&physical=1&location=22127"
         },
         "2026-10-28": {
           "available": false,
@@ -5044,7 +5111,7 @@
         },
         "2026-10-31": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-10-31&item=194755&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-10-31&item=194754&digital=0&physical=1&location=22127"
         },
         "2026-11-01": {
           "available": false,
@@ -5068,11 +5135,11 @@
         },
         "2026-11-06": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-11-06&item=194755&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-11-06&item=194754&digital=0&physical=1&location=22127"
         },
         "2026-11-07": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-11-07&item=194755&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-11-07&item=194754&digital=0&physical=1&location=22127"
         },
         "2026-11-08": {
           "available": false,
@@ -5092,7 +5159,7 @@
         },
         "2026-11-12": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-11-12&item=194755&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-11-12&item=194754&digital=0&physical=1&location=22127"
         },
         "2026-11-13": {
           "available": true,
@@ -5100,7 +5167,7 @@
         },
         "2026-11-14": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-11-14&item=194755&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-11-14&item=194754&digital=0&physical=1&location=22127"
         },
         "2026-11-15": {
           "available": false,
@@ -5112,7 +5179,7 @@
         },
         "2026-11-17": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-11-17&item=194755&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-11-17&item=194754&digital=0&physical=1&location=22127"
         },
         "2026-11-18": {
           "available": false,
@@ -5120,7 +5187,7 @@
         },
         "2026-11-19": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-11-19&item=194754&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-11-19&item=194755&digital=0&physical=1&location=22127"
         },
         "2026-11-20": {
           "available": true,
@@ -5156,7 +5223,7 @@
         },
         "2026-11-28": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-11-28&item=194754&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-11-28&item=194755&digital=0&physical=1&location=22127"
         },
         "2026-11-29": {
           "available": false,
@@ -5168,7 +5235,7 @@
         },
         "2026-12-01": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-12-01&item=194754&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-12-01&item=194755&digital=0&physical=1&location=22127"
         },
         "2026-12-02": {
           "available": false,
@@ -5176,7 +5243,7 @@
         },
         "2026-12-03": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-12-03&item=194755&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-12-03&item=194754&digital=0&physical=1&location=22127"
         },
         "2026-12-04": {
           "available": true,
@@ -5196,7 +5263,7 @@
         },
         "2026-12-08": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-12-08&item=194754&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-12-08&item=194755&digital=0&physical=1&location=22127"
         },
         "2026-12-09": {
           "available": false,
@@ -5204,15 +5271,15 @@
         },
         "2026-12-10": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-12-10&item=194754&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-12-10&item=194755&digital=0&physical=1&location=22127"
         },
         "2026-12-11": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-12-11&item=194754&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-12-11&item=194755&digital=0&physical=1&location=22127"
         },
         "2026-12-12": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-12-12&item=194754&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-12-12&item=194755&digital=0&physical=1&location=22127"
         },
         "2026-12-13": {
           "available": false,
@@ -5236,7 +5303,7 @@
         },
         "2026-12-18": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-12-18&item=194754&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-12-18&item=194755&digital=0&physical=1&location=22127"
         },
         "2026-12-19": {
           "available": true,
@@ -5268,7 +5335,7 @@
         },
         "2026-12-26": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-12-26&item=194754&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/cd5760a178ee/physical?date=2026-12-26&item=194755&digital=0&physical=1&location=22127"
         },
         "2026-12-27": {
           "available": false,
@@ -5297,6 +5364,11 @@
       "name": "Storm King Art Center",
       "id": "2eec0f4436f3",
       "theme": "Outdoors",
+      "themes": [
+        "Outdoors",
+        "Art",
+        "Nature"
+      ],
       "location": "Northern Westchester County",
       "url": "https://nrpl.libcal.com/passes/2eec0f4436f3",
       "days": {
@@ -5675,6 +5747,10 @@
       "name": "Sugar Hill Children’s Museum of Art & Storytelling",
       "id": "913e43587ccf",
       "theme": "Children's",
+      "themes": [
+        "Children's",
+        "Art"
+      ],
       "location": "New York City",
       "url": "https://nrpl.libcal.com/passes/913e43587ccf",
       "days": {
@@ -5688,7 +5764,7 @@
         },
         "2026-10-03": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/913e43587ccf/physical?date=2026-10-03&item=194759&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/913e43587ccf/physical?date=2026-10-03&item=194758&digital=0&physical=1&location=22127"
         },
         "2026-10-04": {
           "available": false,
@@ -5772,7 +5848,7 @@
         },
         "2026-10-24": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/913e43587ccf/physical?date=2026-10-24&item=194758&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/913e43587ccf/physical?date=2026-10-24&item=194759&digital=0&physical=1&location=22127"
         },
         "2026-10-25": {
           "available": false,
@@ -5800,7 +5876,7 @@
         },
         "2026-10-31": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/913e43587ccf/physical?date=2026-10-31&item=194758&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/913e43587ccf/physical?date=2026-10-31&item=194759&digital=0&physical=1&location=22127"
         },
         "2026-11-01": {
           "available": false,
@@ -5824,7 +5900,7 @@
         },
         "2026-11-06": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/913e43587ccf/physical?date=2026-11-06&item=194759&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/913e43587ccf/physical?date=2026-11-06&item=194758&digital=0&physical=1&location=22127"
         },
         "2026-11-07": {
           "available": true,
@@ -5880,11 +5956,11 @@
         },
         "2026-11-20": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/913e43587ccf/physical?date=2026-11-20&item=194758&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/913e43587ccf/physical?date=2026-11-20&item=194759&digital=0&physical=1&location=22127"
         },
         "2026-11-21": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/913e43587ccf/physical?date=2026-11-21&item=194759&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/913e43587ccf/physical?date=2026-11-21&item=194758&digital=0&physical=1&location=22127"
         },
         "2026-11-22": {
           "available": false,
@@ -5912,7 +5988,7 @@
         },
         "2026-11-28": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/913e43587ccf/physical?date=2026-11-28&item=194759&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/913e43587ccf/physical?date=2026-11-28&item=194758&digital=0&physical=1&location=22127"
         },
         "2026-11-29": {
           "available": false,
@@ -5940,7 +6016,7 @@
         },
         "2026-12-05": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/913e43587ccf/physical?date=2026-12-05&item=194758&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/913e43587ccf/physical?date=2026-12-05&item=194759&digital=0&physical=1&location=22127"
         },
         "2026-12-06": {
           "available": false,
@@ -5996,7 +6072,7 @@
         },
         "2026-12-19": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/913e43587ccf/physical?date=2026-12-19&item=194759&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/913e43587ccf/physical?date=2026-12-19&item=194758&digital=0&physical=1&location=22127"
         },
         "2026-12-20": {
           "available": false,
@@ -6024,7 +6100,7 @@
         },
         "2026-12-26": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/913e43587ccf/physical?date=2026-12-26&item=194759&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/913e43587ccf/physical?date=2026-12-26&item=194758&digital=0&physical=1&location=22127"
         },
         "2026-12-27": {
           "available": false,
@@ -6053,6 +6129,10 @@
       "name": "The Frick Collection",
       "id": "1f4459453d05",
       "theme": "Art",
+      "themes": [
+        "Art",
+        "History"
+      ],
       "location": "New York City",
       "url": "https://nrpl.libcal.com/passes/1f4459453d05",
       "days": {
@@ -6431,6 +6511,10 @@
       "name": "The Jewish Museum",
       "id": "af12003014ca",
       "theme": "Art",
+      "themes": [
+        "Art",
+        "History"
+      ],
       "location": "New York City",
       "url": "https://nrpl.libcal.com/passes/af12003014ca",
       "days": {
@@ -6809,6 +6893,11 @@
       "name": "Westchester Children’s Museum",
       "id": "7d16e533393f",
       "theme": "Children's",
+      "themes": [
+        "Children's",
+        "Science",
+        "Art"
+      ],
       "location": "Central Westchester County",
       "url": "https://nrpl.libcal.com/passes/7d16e533393f",
       "days": {
@@ -6822,7 +6911,7 @@
         },
         "2026-10-03": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-10-03&item=195186&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-10-03&item=194732&digital=0&physical=1&location=22127"
         },
         "2026-10-04": {
           "available": false,
@@ -6838,11 +6927,11 @@
         },
         "2026-10-07": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-10-07&item=195186&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-10-07&item=194732&digital=0&physical=1&location=22127"
         },
         "2026-10-08": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-10-08&item=195186&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-10-08&item=194732&digital=0&physical=1&location=22127"
         },
         "2026-10-09": {
           "available": false,
@@ -6862,7 +6951,7 @@
         },
         "2026-10-13": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-10-13&item=194732&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-10-13&item=195186&digital=0&physical=1&location=22127"
         },
         "2026-10-14": {
           "available": true,
@@ -6874,7 +6963,7 @@
         },
         "2026-10-16": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-10-16&item=195186&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-10-16&item=194732&digital=0&physical=1&location=22127"
         },
         "2026-10-17": {
           "available": true,
@@ -6894,7 +6983,7 @@
         },
         "2026-10-21": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-10-21&item=194732&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-10-21&item=195186&digital=0&physical=1&location=22127"
         },
         "2026-10-22": {
           "available": true,
@@ -6906,7 +6995,7 @@
         },
         "2026-10-24": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-10-24&item=195186&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-10-24&item=194732&digital=0&physical=1&location=22127"
         },
         "2026-10-25": {
           "available": false,
@@ -6918,7 +7007,7 @@
         },
         "2026-10-27": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-10-27&item=195186&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-10-27&item=194732&digital=0&physical=1&location=22127"
         },
         "2026-10-28": {
           "available": true,
@@ -6930,7 +7019,7 @@
         },
         "2026-10-30": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-10-30&item=195186&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-10-30&item=194732&digital=0&physical=1&location=22127"
         },
         "2026-10-31": {
           "available": true,
@@ -6946,7 +7035,7 @@
         },
         "2026-11-03": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-11-03&item=194732&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-11-03&item=195186&digital=0&physical=1&location=22127"
         },
         "2026-11-04": {
           "available": true,
@@ -6974,7 +7063,7 @@
         },
         "2026-11-10": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-11-10&item=194732&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-11-10&item=195186&digital=0&physical=1&location=22127"
         },
         "2026-11-11": {
           "available": false,
@@ -6986,7 +7075,7 @@
         },
         "2026-11-13": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-11-13&item=195186&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-11-13&item=194732&digital=0&physical=1&location=22127"
         },
         "2026-11-14": {
           "available": true,
@@ -7006,7 +7095,7 @@
         },
         "2026-11-18": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-11-18&item=194732&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-11-18&item=195186&digital=0&physical=1&location=22127"
         },
         "2026-11-19": {
           "available": true,
@@ -7018,7 +7107,7 @@
         },
         "2026-11-21": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-11-21&item=195186&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-11-21&item=194732&digital=0&physical=1&location=22127"
         },
         "2026-11-22": {
           "available": false,
@@ -7086,7 +7175,7 @@
         },
         "2026-12-08": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-12-08&item=195186&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-12-08&item=194732&digital=0&physical=1&location=22127"
         },
         "2026-12-09": {
           "available": true,
@@ -7094,7 +7183,7 @@
         },
         "2026-12-10": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-12-10&item=194732&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-12-10&item=195186&digital=0&physical=1&location=22127"
         },
         "2026-12-11": {
           "available": true,
@@ -7118,7 +7207,7 @@
         },
         "2026-12-16": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-12-16&item=194732&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-12-16&item=195186&digital=0&physical=1&location=22127"
         },
         "2026-12-17": {
           "available": true,
@@ -7130,7 +7219,7 @@
         },
         "2026-12-19": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-12-19&item=194732&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-12-19&item=195186&digital=0&physical=1&location=22127"
         },
         "2026-12-20": {
           "available": false,
@@ -7142,7 +7231,7 @@
         },
         "2026-12-22": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-12-22&item=195186&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-12-22&item=194732&digital=0&physical=1&location=22127"
         },
         "2026-12-23": {
           "available": false,
@@ -7150,7 +7239,7 @@
         },
         "2026-12-24": {
           "available": true,
-          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-12-24&item=194732&digital=0&physical=1&location=22127"
+          "bookingUrl": "https://nrpl.libcal.com/passes/7d16e533393f/physical?date=2026-12-24&item=195186&digital=0&physical=1&location=22127"
         },
         "2026-12-25": {
           "available": false,
