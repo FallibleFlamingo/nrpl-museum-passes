@@ -29,12 +29,12 @@
  *
  * HOW WE DETECT AVAILABILITY (confirmed against the real site)
  * Each day is rendered as:
- *   <div class="day day-Wed day-2026-10-14">
- *     <div class="day-number">
- *       <a href="/passes/.../physical?date=2026-10-14&..."
- *          class="s-lc-pass-availability s-lc-pass-available">14</a>
- *     </div>
- *   </div>
+ *    <div class="day day-Wed day-2026-10-14">
+ *      <div class="day-number">
+ *        <a href="/passes/.../physical?date=2026-10-14&..."
+ *           class="s-lc-pass-availability s-lc-pass-available">14</a>
+ *      </div>
+ *    </div>
  * for an available day, versus a plain (non-link) <span class="...
  * s-lc-pass-unavailable"> or "...s-lc-pass-closed"> for days that aren't
  * bookable. The exact date is embedded in the outer div's class name. The
@@ -70,7 +70,7 @@ const OUTPUT_PATH = path.join(__dirname, '..', 'docs', 'data', 'availability.jso
 const DEBUG_DIR = path.join(__dirname, 'debug');
 const SUMMARY_PATH = path.join(DEBUG_DIR, 'SUMMARY.md');
 
-const REQUEST_DELAY_MS = 10000;        // honors nrpl.libcal.com's robots.txt: "User-agent: * / Crawl-delay: 10"
+const REQUEST_DELAY_MS = 10000;         // honors nrpl.libcal.com's robots.txt: "User-agent: * / Crawl-delay: 10"
 const PAGE_DEFAULT_TIMEOUT_MS = 15000; // floor for any Playwright action without its own explicit timeout
 const HARD_TIMEOUT_MS = 40 * 60 * 1000; // absolute ceiling for the whole run - comfortably above the ~30 min realistic worst case
 
@@ -152,6 +152,8 @@ async function scrapeMuseum(context, museum) {
   const result = {
     name: museum.name,
     id: museum.id,
+    theme: museum.theme || 'General',       // Added to support filters
+    location: museum.location || 'New York', // Added to support filters
     url,
     days: {},
     error: null,
