@@ -158,10 +158,10 @@
                             <div class="mb-4">
                                 <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Available Dates:</h4>
                                 <div class="flex flex-wrap gap-1.5 max-h-28 overflow-y-auto">
-                                    <template x-for="slot in museum.availableSlots" :key="slot.date">
+                                    <template x-for="slot in getAvailableDatesList(museum)" :key="slot.date">
                                         <a :href="slot.bookingUrl" target="_blank" class="text-xs bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200 px-2 py-0.5 rounded font-medium transition" x-text="formatDateShort(slot.date)" :title="'Book ' + museum.name"></a>
                                     </template>
-                                    <template x-if="!museum.availableSlots || museum.availableSlots.length === 0">
+                                    <template x-if="getAvailableDatesList(museum).length === 0">
                                         <span class="text-xs text-slate-400 italic">No dates currently available</span>
                                     </template>
                                 </div>
@@ -169,7 +169,7 @@
                         </div>
 
                         <div class="pt-4 border-t border-slate-100 flex justify-between items-center">
-                            <span class="text-xs text-slate-500" x-text="(museum.availableSlots ? museum.availableSlots.length : 0) + ' slots open'"></span>
+                            <span class="text-xs text-slate-500" x-text="getAvailableDatesCount(museum) + ' slots open'"></span>
                         </div>
                     </div>
                 </template>
@@ -210,13 +210,14 @@
                     try {
                         const response = await fetch('./data/availability.json');
                         const data = await response.json();
-                        // Expecting data structure mapping each museum with available slots containing date & bookingUrl
-                        this.museums = data;
                         
-                        const themesSet = new Set(data.map(m => m.theme).filter(Boolean));
+                        // Parse museums list from scrape.js wrapper object
+                        this.museums = data.museums || [];
+                        
+                        const themesSet = new Set(this.museums.map(m => m.theme).filter(Boolean));
                         if (themesSet.size > 0) this.availableThemes = Array.from(themesSet);
 
-                        const locsSet = new Set(data.map(m => m.location).filter(Boolean));
+                        const locsSet = new Set(this.museums.map(m => m.location).filter(Boolean));
                         if (locsSet.size > 0) this.availableLocations = Array.from(locsSet);
 
                     } catch (err) {
@@ -239,18 +240,26 @@
                 getPassesForDate(dateStr) {
                     let passes = [];
                     this.filteredMuseums.forEach(museum => {
-                        if (museum.availableSlots) {
-                            museum.availableSlots.forEach(slot => {
-                                if (slot.date === dateStr) {
-                                    passes.push({
-                                        museumName: museum.name,
-                                        bookingUrl: slot.bookingUrl
-                                    });
-                                }
+                        if (museum.days && museum.days[dateStr] && museum.days[dateStr].available) {
+                            passes.push({
+                                museumName: museum.name,
+                                bookingUrl: museum.days[dateStr].bookingUrl || museum.url
                             });
                         }
                     });
                     return passes;
+                },
+
+                getAvailableDatesCount(museum) {
+                    if (!museum.days) return 0;
+                    return Object.values(museum.days).filter(d => d.available).length;
+                },
+
+                getAvailableDatesList(museum) {
+                    if (!museum.days) return [];
+                    return Object.entries(museum.days)
+                        .filter(([date, info]) => info.available)
+                        .map(([date, info]) => ({ date, bookingUrl: info.bookingUrl || museum.url }));
                 },
 
                 get calendarDays() {
