@@ -300,8 +300,9 @@
 
             <!-- Description -->
             <div class="border-t pt-4 border-slate-100">
-                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Pass Details & Information</h4>
-                <div class="text-sm text-slate-600 leading-relaxed space-y-2 max-h-48 overflow-y-auto pr-1" x-html="activeModal?.description || 'The pass provides admission for guests based on library guidelines. Click reserve above to proceed directly to the official LibCal reservation page.'">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Museum Summary & Details</h4>
+                <div class="text-sm text-slate-600 leading-relaxed whitespace-pre-line max-h-56 overflow-y-auto pr-1" 
+                     x-text="activeModal?.description || 'The pass provides admission for guests based on library guidelines. Click reserve above to proceed directly to the official LibCal reservation page.'">
                 </div>
             </div>
 
