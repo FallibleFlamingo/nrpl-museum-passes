@@ -53,7 +53,6 @@ const BASE_URL = 'https://nrpl.libcal.com/passes';
 const HEADLESS = process.env.HEADLESS !== '0';
 const DEBUG = process.env.DEBUG === '1';
 const LIMIT = process.env.MUSEUM_LIMIT ? parseInt(process.env.MUSEUM_LIMIT, 10) : null;
-// Default to 3 months (current month + next 2 months) unless overridden by environment variable
 const MONTHS_TO_SCRAPE = process.env.MONTHS_TO_SCRAPE ? parseInt(process.env.MONTHS_TO_SCRAPE, 10) : 3;
 
 const OUTPUT_PATH = path.join(__dirname, '..', 'docs', 'data', 'availability.json');
@@ -89,7 +88,6 @@ const NEXT_BUTTON_CANDIDATES = [
 ];
 
 async function clickNextMonth(page) {
-  // Honor the crawl delay before firing off a new month request
   await sleep(REQUEST_DELAY_MS);
 
   let clicked = false;
@@ -103,7 +101,6 @@ async function clickNextMonth(page) {
   }
   if (!clicked) return false;
 
-  // Wait for LibCal loading spinner to finish updating calendar days
   await page.waitForFunction(() => {
     const text = document.body.innerText || '';
     return !text.includes('Determining Availability');
@@ -170,7 +167,8 @@ async function scrapeMuseum(context, museum) {
     name: museum.name,
     id: museum.id,
     theme: museum.theme || 'General',
-    location: museum.location || 'New York',
+    themes: museum.themes || (museum.theme ? [museum.theme] : ['General']),
+    location: museum.location || 'New York City',
     url,
     days: {},
     error: null,
@@ -198,7 +196,6 @@ async function scrapeMuseum(context, museum) {
     });
     await page.waitForTimeout(1500);
 
-    // Collect current month + next (MONTHS_TO_SCRAPE - 1) months
     for (let m = 0; m < MONTHS_TO_SCRAPE; m++) {
       if (m > 0) {
         const nextSuccess = await clickNextMonth(page);
@@ -217,7 +214,7 @@ async function scrapeMuseum(context, museum) {
         const sampleFor = (state) => rawDays.find(d => d.state === state);
         const summaryChunk = [
           `## ${museum.name} (${museum.id}) - Month Offset ${m}`,
-          `- Days found: ${rawDays.length}${rawDays.length ? ` (${rawDays[0].date} to${rawDays[rawDays.length - 1].date})` : ''}`,
+          `- Days found: ${rawDays.length}${rawDays.length ? ` (${rawDays[0].date} to ${rawDays[rawDays.length - 1].date})` : ''}`,
           `- State counts: ${JSON.stringify(counts)}`,
           '**Sample "available" cell:**', '~~~html', sampleFor('available') ? sampleFor('available').outerHTML : '(none found)', '~~~',
           '**Calendar header/nav area HTML:**', '~~~html', navHtml || '(could not locate month heading)', '~~~',
