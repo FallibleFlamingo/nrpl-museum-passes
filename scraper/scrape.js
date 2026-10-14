@@ -4,10 +4,10 @@
  * See README for background.
  *
  * BEING A GOOD CITIZEN ON NRPL's / SPRINGSHARE'S SERVERS
- *  - Manual trigger only - no automatic schedule.
- *  - REQUEST_DELAY_MS honors nrpl.libcal.com/robots.txt "Crawl-delay: 10".
+ *  - Scheduled to run once daily at 5:00 AM UTC.
+ *  - REQUEST_DELAY_MS honors nrpl.libcal.com/robots.txt's explicit
+ *    "User-agent: * / Crawl-delay: 10" directive.
  *  - Requests are made one museum at a time, never in parallel.
- *  - No automatic retries on failure.
  *  - Identifies itself honestly via a custom User-Agent suffix.
  */
 
@@ -27,9 +27,9 @@ const OUTPUT_PATH = path.join(__dirname, '..', 'docs', 'data', 'availability.jso
 const DEBUG_DIR = path.join(__dirname, 'debug');
 const SUMMARY_PATH = path.join(DEBUG_DIR, 'SUMMARY.md');
 
-const REQUEST_DELAY_MS = 10000;         // honors nrpl.libcal.com's robots.txt: "User-agent: * / Crawl-delay: 10"
+const REQUEST_DELAY_MS = 10000;         // honors nrpl.libcal.com's robots.txt
 const PAGE_DEFAULT_TIMEOUT_MS = 15000; // floor for Playwright actions
-const HARD_TIMEOUT_MS = 60 * 60 * 1000; // absolute watchdog ceiling
+const HARD_TIMEOUT_MS = 60 * 60 * 1000; // absolute watchdog ceiling (1 hour)
 
 const USER_AGENT =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) ' +
@@ -96,12 +96,9 @@ async function captureNavHtml(page) {
 
 async function extractMuseumDescription(page) {
   return page.evaluate(() => {
-    // Look for description text on LibCal pass pages
-    // Usually located in body containers, paragraphs near address/phone info, or main pass description block
     const elements = Array.from(document.querySelectorAll('p, div.s-lc-pass-desc, #s-lc-pass-info, .row'));
     for (const el of elements) {
       const text = (el.innerText || '').trim();
-      // Look for substantial descriptive text blocks (avoiding navigation and header elements)
       if (text.length > 120 && !text.includes('Determining Availability') && !text.includes('Sunday Monday Tuesday')) {
         return text;
       }
@@ -183,7 +180,6 @@ async function scrapeMuseum(context, museum) {
     });
     await page.waitForTimeout(1500);
 
-    // Extract live description text from LibCal page if not already hardcoded
     if (!result.description) {
       result.description = await extractMuseumDescription(page);
     }
