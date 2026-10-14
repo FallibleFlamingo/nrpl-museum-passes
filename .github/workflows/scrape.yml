@@ -1,38 +1,44 @@
-name: Scrape museum pass availability
+name: Scrape Museum Pass Availability
 
 on:
   schedule:
-    # Runs every 3 hours. Edit this cron expression to change frequency.
-    # (Cron times are UTC. 0 */3 * * * = every 3 hours on the hour.)
-    - cron: '0 */3 * * *'
-  workflow_dispatch: {} # lets you trigger it manually from the Actions tab
-
-permissions:
-  contents: write
+    # Runs automatically every morning at 5:00 AM UTC (1:00 AM EDT / 12:00 AM EST)
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+    inputs:
+      months_to_scrape:
+        description: 'Number of months to scrape'
+        required: false
+        default: '3'
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '18'
 
       - name: Install dependencies
-        run: npm install
-
-      - name: Install Playwright browser
-        run: npx playwright install --with-deps chromium
-
-      - name: Run scraper
-        run: npm run scrape
-
-      - name: Commit updated availability data
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          npm ci
+          npx playwright install --with-deps chromium
+
+      - name: Run Scraper
+        env:
+          HEADLESS: '1'
+          MONTHS_TO_SCRAPE: ${{ github.event.inputs.months_to_scrape || '3' }}
+        run: node scraper/scrape.js
+
+      - name: Commit and push generated availability data
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add docs/data/availability.json
-          git diff --quiet --cached || git commit -m "Update availability data [automated]"
+          git status
+          git diff-index --quiet HEAD || git commit -m "auto: update museum pass availability data"
           git push
